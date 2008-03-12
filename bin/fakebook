@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+ 
+require File.dirname(__FILE__) + '/../lib/fakebook'
+ 
+#Fakebook.start ARGV
+
+#fb_id = YAML.load_file("config/facebook.yml")['development'][ENV['USER']]['infinite_session_uid']
+
+fb_id = 123
+
+# TODO: check if fakebook.yml exists in ./config, and then overwrite with command-line values passed in
+
+Fakebook::Proxy.rack("http://0.0.0.0:5000/packrat/", "http://0.0.0.0:3000/facebook/", "app-secret", { :user => fb_id, :session_key => 'session-key', :friends => "2,3,4" })

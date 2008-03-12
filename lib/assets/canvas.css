@@ -1,0 +1,17 @@
+/*       Source:  Local Cache                                                                 */
+/*     Location:  rsrc@79757@/html/css/canvas.css                                             */
+/*      Machine:  10.1.0.29                                                                   */
+/*    Generated:  March 5th 2008 2:09:36 AM PST                                               */
+
+.fbframe #footer_actions{clear:both;background:#f7f7f7;margin:0px;border-top:solid 1px #ddd;}
+.fbframe #footer_actions ul{list-style:none;padding:10px 20px 25px 20px;margin:0px;}
+.fbframe #footer_actions li{float:left;line-height:18px;padding:0px 2px 0px 2px;}
+#content{overflow:hidden;width:646px;}
+.canvas_rel_positioning{position:relative;overflow:hidden;zoom:1;}
+.canvas_error_page div#error_message{padding:60px 60px 30px 60px;}
+.canvas_error_page div#error_message div.error_header{border-bottom:1px #ccc solid;font-size:14px;margin:0px 0px 20px 0px;padding:0px 0px 10px 0px;}
+.canvas_error_page div#error_message h3.error_details{color:#555;font-size:13px;font-weight:normal;margin:0px;padding:0px;}
+.canvas_error_page div#error_message p{line-height:16px;margin:10px 0px 15px 0px;}
+.canvas_error_page div#error_message div.action_buttons{padding:15px 0px;text-align:center;}
+.canvas_error_page div#error_message div.action_buttons .inputbutton{margin:0px 4px;}
+.canvas_error_page div#error_message div.parse_runtime_errors{background:#f7f7f7;border:1px solid #ccc;margin:10px 0px;padding:10px;}

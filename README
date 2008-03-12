@@ -1,0 +1,37 @@
+Fakebook
+=============
+
+Lightly simulates the Facebook platform, allowing you to develop apps offline. Takes a 
+request and passes it to the app as a POST with the fb_sig_* params added, etc. Returns 
+the response with FBML parsed (sort of) and some chrome added. Requires the Rack library.
+
+For example, to create an HTTP server that simulates the Facebook proxy:
+
+  Fakebook::Proxy.rack "http://0.0.0.0:5000/canvas-path/", 
+    "http://0.0.0.0:4000/callback-path/",
+    "app-secret", 
+    { :user => 512280897, :session_key => 'session-key', :friends => "2,3,4" }
+
+Or you can hit the app directly, without starting a proxy server:
+
+  app = Fakebook::Application.new("http://0.0.0.0:4000/facebook/", "canvas-path", "app-secret")
+  app.set_default_params :user => 123, :session_key => 'abc', :friends => "345,456"
+  app.request("/").body
+
+
+===========
+Getting started
+===========
+
+  $ gem install fakebook
+
+Run it:
+
+  $ fakebook
+
+
+==========
+Contributors
+==========
+
+- Scott Raymond <sco@scottraymond.net>

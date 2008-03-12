@@ -1,0 +1,12 @@
+- the set_default_params thing sucks
+- parse fbml better
+   - if-is-user
+   - is-logged-out
+   - iframe
+   - profile-pic
+   - comments
+   - possessive names
+   - share_button
+- accept a yaml file to set up default_params, as well as other facebook-knowledge
+- make the command-line UI friendlier
+- respond to regular API requests?
