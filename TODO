@@ -1,3 +1,17 @@
+- better logging -- use rack's logger when the proxy is used; otherwise pass in a logger to Application?
+- get rid of Fakebook::Proxy.rack -- the mongrel-specific stuff should be elsewhere, like in the bin
+- is there a ruby way of doing the benchmarking stuff?
+
+   #start_time = Time.now
+   #...
+   #end_time = Time.now
+   #STDERR.puts "[#{end_time - start_time}] #{path}"
+
+- allow for a template to be specified when initializing Fakebook::Proxy -- even pass in your own full path?
+- the "Starting Fakebook proxy..." thing probably belongs in the bin
+- make the command-line UI friendlier
+- better getting-started docs
+- accept a yaml file to set up default_params, as well as other facebook-knowledge
 - the set_default_params thing sucks
 - parse fbml better
    - if-is-user
@@ -7,6 +21,4 @@
    - comments
    - possessive names
    - share_button
-- accept a yaml file to set up default_params, as well as other facebook-knowledge
-- make the command-line UI friendlier
 - respond to regular API requests?
