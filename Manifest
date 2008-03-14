@@ -1,0 +1,16 @@
+bin/fakebook
+lib/assets/base.js
+lib/assets/canvas.css
+lib/assets/common.css
+lib/assets/extended.js
+lib/assets/fakebook.js
+lib/assets/fbml.js
+lib/assets/navigator_bg.gif
+lib/assets/string.js
+lib/fakebook.rb
+lib/templates/minimal.html.erb
+lib/templates/standard.html.erb
+LICENSE
+Manifest
+README
+TODO
