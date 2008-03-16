@@ -3,20 +3,26 @@ Fakebook
 
 Lightly simulates the Facebook platform, allowing you to develop apps offline. Takes a 
 request and passes it to the app as a POST with the fb_sig_* params added, etc. Returns 
-the response with FBML parsed (sort of) and some chrome added. Requires the Rack library.
+the response with FBML parsed (sort of) and some chrome added. For example:
 
-For example, to create an HTTP server that simulates the Facebook proxy:
+	app = Fakebook.new :callback_url   => "http://0.0.0.0:4000/facebook/",
+	                   :canvas_path    => "/myapp/",
+	                   :app_secret     => "app-secret")
+	                   :default_params => { :user => 123, :session_key => 'abc', :friends => "345,456" }
+	app.request("/").body
 
-  Fakebook::Proxy.rack "http://0.0.0.0:5000/canvas-path/", 
-    "http://0.0.0.0:4000/callback-path/",
-    "app-secret", 
-    { :user => 512280897, :session_key => 'session-key', :friends => "2,3,4" }
+Fakebook implements the #call method according to the Rack specification, so you can simply 
+use them to create an HTTP server that proxies to your application, using your choice of 
+HTTP server library (Mongrel, WEBrick, Thin, etc.) For example:
 
-Or you can hit the app directly, without starting a proxy server:
+  Rack::Handler::Mongrel.run app, :Port => 5000
 
-  app = Fakebook::Application.new("http://0.0.0.0:4000/facebook/", "canvas-path", "app-secret")
-  app.set_default_params :user => 123, :session_key => 'abc', :friends => "345,456"
-  app.request("/").body
+
+===========
+Dependencies
+===========
+
+Rack >= 0.3.0
 
 
 ===========
@@ -25,9 +31,9 @@ Getting started
 
   $ gem install fakebook
 
-Run it:
+Run the helper binary to see the available options:
 
-  $ fakebook
+  $ fakebook --help
 
 
 ==========

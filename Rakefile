@@ -1,6 +1,5 @@
 require 'rake'
-
-Version = '0.1.0'
+require './lib/fakebook'
 
 begin
   require 'rubygems'
@@ -11,7 +10,7 @@ begin
   Echoe.new('fakebook') do |p|
     p.project        = 'fakebook'
     p.rubyforge_name = 'fakebook'
-    p.version        = Version
+    p.version        = Fakebook::Version
     p.summary        = "Lightly simulates the Facebook platform, allowing you to develop and test Facebook canvas apps offline."
     #p.description  = ""
     p.url            = "http://github.com/sco/fakebook/"
@@ -27,5 +26,5 @@ end
 
 desc 'Install as a gem'
 task :install_gem do
-  puts `rake manifest package && gem install pkg/fakebook-#{Version}.gem`
+  puts `rake manifest package && gem install pkg/fakebook-#{Fakebook::Version}.gem`
 end
