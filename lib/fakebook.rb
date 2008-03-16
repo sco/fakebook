@@ -45,8 +45,7 @@ class Fakebook
   def request(path, params={})
     env = { :body => "foo" }
     req = Rack::Request.new(env)
-    res = Rack::Response.new(call(req))
-    res.body
+    Rack::Response.new(call(req))
   end
 
   private

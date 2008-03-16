@@ -1,6 +1,7 @@
 - perhaps #request should be a wrapper around #call, instead of the other way around?
 - rename default_params to fb_params ?
 - what does AccessLog do?
+- document using different templates
 - should #request do the fbml parsing, and add chrome?
 - the "use Rack::Static" thing should be inside Fakebook
 - accept a yaml file to set up default_params, as well as other facebook-knowledge
