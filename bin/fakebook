@@ -6,7 +6,7 @@ require 'rack'
 
 server = nil
 rack_options = {:Port => 5000, :Host => "0.0.0.0", :AccessLog => []}
-fakebook_options = { :callback_url => "http://0.0.0.0:3000/facebook/", :canvas_path => "/packrat/", :app_secret => "app-secret", :fb_params => { :user => 123, :session_key => 'session-key', :friends => "2,3,4" } }
+fakebook_options = { :callback_url => "http://0.0.0.0:3000/facebook/", :canvas_path => "/myapp/", :app_secret => "app-secret", :fb_params => { :user => 123, :session_key => 'session-key', :friends => "2,3,4" } }
 
 opts = OptionParser.new("", 24, '  ') { |opts|
   opts.banner = "Usage: fakebook [options]"

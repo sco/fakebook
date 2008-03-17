@@ -12,11 +12,11 @@ class Fakebook
   attr_accessor :callback_url, :canvas_path, :app_secret, :fb_params, :template_file
   
   def initialize(options = {})
-    @callback_url  = options[:callback_url]
-    @canvas_path   = options[:canvas_path]
-    @app_secret    = options[:app_secret]
+    @callback_url  =  options[:callback_url]
+    @canvas_path   =  options[:canvas_path]
+    @app_secret    =  options[:app_secret]
     @fb_params     = (options[:fb_params] || {}).merge(:in_canvas => 1, :expires => 0, :added => 1)
-    @template_file = options[:template_file] || File.join(File.dirname(__FILE__), "templates", "standard.html.erb")
+    @template_file =  options[:template_file] || File.join(File.dirname(__FILE__), "templates", "standard.html.erb")
   end
 
   # Implements the Rack interface. Takes a hash representing the environment; returns an 

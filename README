@@ -1,19 +1,20 @@
 Fakebook
 =============
 
-Lightly simulates the Facebook platform, allowing you to develop apps offline. Takes a 
-request and passes it to the app as a POST with the fb_sig_* params added, etc. Returns 
-the response with FBML parsed (sort of) and some chrome added. For example:
+Simple Facebook platform simulator, to aid in developing FB apps offline. Takes a request 
+and passes it to the app as a POST with the fb_sig_* params added, etc. Returns the 
+response with FBML parsed (sort of) and some chrome added. For example:
 
-	app = Fakebook.new :callback_url => "http://0.0.0.0:4000/facebook/",
+	app = Fakebook.new :callback_url => "http://0.0.0.0:4000/callback-path/",
 	                   :canvas_path  => "/myapp/",
 	                   :app_secret   => "app-secret",
 	                   :fb_params    => { :user => 123, :session_key => 'abc', :friends => "345,456" }
 	app.request("/").body
 
-Because Fakebook implements #call according to the Rack specification, you can simply 
-create an HTTP server that proxies to your application, using your choice of server 
-library (Mongrel, WEBrick, Thin, etc.) For example:
+Because Fakebook implements #call according to the Rack specification 
+(http://rack.rubyforge.org/doc/files/SPEC.html), you can simply create an HTTP server that 
+proxies to your application, using your choice of server library (Mongrel, WEBrick, Thin, 
+etc.) For example:
 
   Rack::Handler::Mongrel.run app, :Port => 5000
 
@@ -29,7 +30,12 @@ Rack >= 0.3.0
 Getting started
 ===========
 
-  $ gem install fakebook
+To install the latest version from the repository:
+
+  $ wget http://github.com/sco/fakebook/tarball/master
+  $ tar -xvf sco-fakebook-master.tar.gz
+  $ cd sco-fakebook-master
+  $ sudo rake install_gem
 
 Run the helper binary to see the available options:
 
@@ -44,7 +50,7 @@ Thanks to PackRat (http://apps.facebook.com/packrat/), from which this code was 
 
 
 ==========
-Contributors
+Author
 ==========
 
-- Scott Raymond <sco@scottraymond.net>
+Scott Raymond <sco@scottraymond.net>
