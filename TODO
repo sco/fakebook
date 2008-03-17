@@ -1,9 +1,5 @@
-- fix #request
-- what does AccessLog do?
-- document using different templates
-- improve rdocs
-- the "use Rack::Static" thing should be inside Fakebook
-- accept a yaml file to set up default_params, as well as other facebook-knowledge
+- document how to use different templates
+- can "use Rack::Static" be inside Fakebook?
 - parse fbml better
    - if-is-user
    - is-logged-out

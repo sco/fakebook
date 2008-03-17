@@ -11,12 +11,17 @@ rescue LoadError => e
 end
 rack_options = { :Port => 5000, :Host => "0.0.0.0" }
 fakebook_options = { :callback_url => "http://0.0.0.0:3000/facebook/", :canvas_path => "/myapp/", :app_secret => "app-secret", :fb_params => { :user => 123, :session_key => 'session-key', :friends => "2,3,4" } }
+config_file = "config/fakebook.yml"
 
 OptionParser.new do |opts|
   opts.banner = "Fakebook #{Fakebook::Version}. Usage: fakebook [options]"
 
   opts.separator ""
   opts.separator "Options:"
+
+  opts.on("-f", "--config [PATH]", "path to a YAML config file (default: #{config_file})") { |v|
+    config_file = v
+  }
 
   opts.on("-c", "--callback [URL]", "the callback URL of your application (default: #{fakebook_options[:callback_url]})") { |v|
     fakebook_options[:callback_url] = v
@@ -38,7 +43,7 @@ OptionParser.new do |opts|
     fakebook_options[:fb_params][:session_key] = v
   }
 
-  opts.on("-f", "--friends [FRIENDS]", "the user's friends (default: #{fakebook_options[:fb_params][:friends]})") { |v|
+  opts.on("--friends [FRIENDS]", "the user's friends (default: #{fakebook_options[:fb_params][:friends]})") { |v|
     fakebook_options[:fb_params][:friends] = v
   }
 
@@ -65,6 +70,13 @@ OptionParser.new do |opts|
   end
 
 end.parse!
+
+if File.exists?(config_file)
+  config = YAML.load_file(config_file) || {}
+  rack_options.merge!(config.delete(:rack) || {})
+  fakebook_options[:fb_params].merge!(config.delete(:fb_params) || {})
+  fakebook_options.merge!(config || {})
+end
 
 fakebook = Fakebook.new(fakebook_options)
 app = Rack::Builder.new {

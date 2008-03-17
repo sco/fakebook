@@ -11,8 +11,8 @@ begin
     p.project        = 'fakebook'
     p.rubyforge_name = 'fakebook'
     p.version        = Fakebook::Version
-    p.summary        = "Simple Facebook platform simulator, to aid in developing FB apps offline."
-    p.description    = "Simple Facebook platform simulator, to aid in developing FB apps offline."
+    p.summary        = "Simple Facebook platform simulator, to aid in developing Facebook canvas apps offline."
+    p.description    = "Simple Facebook platform simulator, to aid in developing Facebook canvas apps offline."
     p.url            = "http://github.com/sco/fakebook/"
     p.author         = 'Scott Raymond'
     p.email          = "sco@scottraymond.net"
