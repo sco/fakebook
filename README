@@ -18,6 +18,14 @@ etc.) For example:
 
   Rack::Handler::Mongrel.run app, :Port => 5000
 
+The package provides a 'fakebook' executable to help in starting up a Fakebook proxy. For 
+example, if you have a Rails app running on port 3000, and the callback path is "/facebook/", 
+and the canvas path is "myapp", you'd run:
+
+  fakebook -c "http://0.0.0.0:3000/facebook/" -a "/myapp/"
+
+See "fakebook --help" for more options.
+
 
 ===========
 Dependencies
@@ -30,7 +38,7 @@ Rack >= 0.3.0
 Getting started
 ===========
 
-To install the latest version from the repository:
+To install the development version from the repository:
 
   $ wget http://github.com/sco/fakebook/tarball/master
   $ tar -xvf sco-fakebook-master.tar.gz

@@ -4,76 +4,79 @@ require File.dirname(__FILE__) + '/../lib/fakebook'
 require 'optparse'
 require 'rack'
 
-server = nil
-rack_options = {:Port => 5000, :Host => "0.0.0.0", :AccessLog => []}
+begin
+  server = Rack::Handler::Mongrel
+rescue LoadError => e
+  server = Rack::Handler::WEBrick
+end
+rack_options = { :Port => 5000, :Host => "0.0.0.0" }
 fakebook_options = { :callback_url => "http://0.0.0.0:3000/facebook/", :canvas_path => "/myapp/", :app_secret => "app-secret", :fb_params => { :user => 123, :session_key => 'session-key', :friends => "2,3,4" } }
 
-opts = OptionParser.new("", 24, '  ') { |opts|
-  opts.banner = "Usage: fakebook [options]"
+OptionParser.new do |opts|
+  opts.banner = "Fakebook #{Fakebook::Version}. Usage: fakebook [options]"
 
   opts.separator ""
   opts.separator "Options:"
 
-  opts.on("-c", "--callback", "the callback URL of your application (default: #{fakebook_options[:callback_url]})") { |s|
-    fakebook_options[:callback_url] = s
+  opts.on("-c", "--callback [URL]", "the callback URL of your application (default: #{fakebook_options[:callback_url]})") { |v|
+    fakebook_options[:callback_url] = v
   }
 
-  opts.on("-a", "--canvas", "the canvas path of your application (default: #{fakebook_options[:canvas_path]})") { |s|
-    fakebook_options[:canvas_path] = s
+  opts.on("-a", "--canvas [PATH]", "the canvas path of your application (default: #{fakebook_options[:canvas_path]})") { |v|
+    fakebook_options[:canvas_path] = v
   }
 
-  opts.on("-r", "--secret", "the application secret (default: #{fakebook_options[:app_secret]})") { |s|
-    fakebook_options[:app_secret] = s
+  opts.on("-s", "--secret [SECRET]", "the application secret (default: #{fakebook_options[:app_secret]})") { |v|
+    fakebook_options[:app_secret] = v
   }
 
-  opts.on("-s", "--server", "web server to (default: mongrel)") { |s|
-    server = s
+  opts.on("-u", "--user [USER_ID]", "the fb id of the user (default: #{fakebook_options[:fb_params][:user]})") { |v|
+    fakebook_options[:fb_params][:user] = v
   }
 
-  opts.on("-o", "--host", "host to listen on (default: #{rack_options[:Host]})") { |host|
+  opts.on("-k", "--session [SESSION_KEY]", "the user's session key (default: #{fakebook_options[:fb_params][:session_key]})") { |v|
+    fakebook_options[:fb_params][:session_key] = v
+  }
+
+  opts.on("-f", "--friends [FRIENDS]", "the user's friends (default: #{fakebook_options[:fb_params][:friends]})") { |v|
+    fakebook_options[:fb_params][:friends] = v
+  }
+
+  opts.on("-h", "--host [HOST]", "host to listen on (default: #{rack_options[:Host]})") { |host|
     rack_options[:Host] = host
   }
 
-  opts.on("-p", "--port", "port to use (default: #{rack_options[:Port]})") { |port|
+  opts.on("-p", "--port [PORT]", "port to use (default: #{rack_options[:Port]})") { |port|
     rack_options[:Port] = port
   }
 
-  opts.on_tail("-h", "--help", "Show this message") do
+  opts.on("--server [SERVER]", "web server to (e.g., webrick, mongrel. default: mongrel)") { |s|
+    case s
+    when "mongrel"
+      server = Rack::Handler::Mongrel
+    when "webrick"
+      server = Rack::Handler::WEBrick
+    end
+  }
+
+  opts.on_tail("--help", "Show this message") do
     puts opts
     exit
   end
 
-  opts.on_tail("-v", "--version", "Show version") do
-    require 'fakebook'
-    puts "Fakebook #{Fakebook::Version}"
-    exit
-  end
+end.parse!
 
-  opts.parse! ARGV
-}
-
-case server
-when nil
-  begin
-    server = Rack::Handler::Mongrel
-  rescue LoadError => e
-    server = Rack::Handler::WEBrick
-  end
-when "mongrel"
-  server = Rack::Handler::Mongrel
-when "webrick"
-  server = Rack::Handler::WEBrick
-end
-
+fakebook = Fakebook.new(fakebook_options)
 app = Rack::Builder.new {
   use Rack::CommonLogger, STDERR
   use Rack::ShowExceptions
   use Rack::Static, :urls => ["/fakebook-assets"], :root => File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib")
   use Rack::Lint
-  fakebook = Fakebook.new(fakebook_options)
   run fakebook
 }
 
-STDERR.puts "Starting Fakebook proxy from http://#{rack_options[:Host]}:#{rack_options[:Port]}#{fakebook_options[:canvas_path]} to #{fakebook_options[:callback_url]}"
+proxy_url = "http://#{rack_options[:Host]}:#{rack_options[:Port]}#{fakebook_options[:canvas_path]}"
+STDERR.puts "Starting Fakebook proxy from #{proxy_url} to #{fakebook_options[:callback_url]}"
+STDERR.puts "  Using fb_params: #{fakebook.fb_params.inspect}"
 
 server.run app, rack_options
