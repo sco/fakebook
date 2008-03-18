@@ -17,6 +17,7 @@ begin
     p.author         = 'Scott Raymond'
     p.email          = "sco@scottraymond.net"
     p.dependencies   << 'rack >=0.3.0'
+    p.clean_pattern.delete('lib/*-*') # so that 'rake clean' won't clobber fakebook-assets
     #p.test_pattern = 'test/*_test.rb'
   end
 rescue LoadError => boom

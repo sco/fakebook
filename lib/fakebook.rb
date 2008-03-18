@@ -17,7 +17,11 @@ class Fakebook
   Version = '0.1.0'
   
   attr_accessor :callback_url, :canvas_path, :app_secret, :fb_params, :template_file
-  
+
+  #def self.new(*args)
+  #  Rack::Static.new(super, :urls => ["/fakebook-assets"], :root => File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib"))
+  #end
+
   def initialize(options = {})
     @callback_url  =  options[:callback_url]
     @canvas_path   =  options[:canvas_path]
