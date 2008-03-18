@@ -9,22 +9,21 @@ To use, run 'fakebook' from the command line to start up a Fakebook proxy. For e
 have a Rails app running on port 3000, and the callback path is "/facebook/", and the canvas path 
 is "myapp":
 
-  $ fakebook -c "http://0.0.0.0:3000/facebook/" -a "/myapp/"
+  $ fakebook --callback "http://0.0.0.0:3000/facebook/" --canvas "/myapp/"
 
 You can save yourself some typing by creating a file called "config/fakebook.yml", and putting
 your configuration in it, like this:
 
-  host: 0.0.0.0
-  port: 6000
-  callback_url: 'http://whatever/'
-  canvas_path: "/myapp/"
-  app_secret: 345345jk4jkhfpo2390s
-  user: 123435567
-  session_key: 345345jk4jkhfpo2390s
-  friends: "10,11,12"
+  callback: "http://whatever/"
+  canvas:   "/myapp/"
+  secret:   345345jk4jkhfpo2390s
+  user:     123435567
+  session:  345345jk4jkhfpo2390s
+  friends:  "10,11,12"
+  host:     0.0.0.0
+  port:     6000
 
 See "fakebook --help" for more options.
-
 
 You can also use the library apart from the command line helper with the Facebook class:
 
@@ -45,13 +44,6 @@ etc.) For example:
 
 
 ===========
-Dependencies
-===========
-
-Rack >= 0.3.0
-
-
-===========
 Getting started
 ===========
 
@@ -67,11 +59,11 @@ Run the helper executable to see the available options:
   $ fakebook --help
 
 
-==========
-Thanks
-==========
+===========
+Dependencies
+===========
 
-Thanks to PackRat (http://apps.facebook.com/packrat/), from which this code was extracted.
+Rack >= 0.3.0
 
 
 ==========
@@ -79,3 +71,10 @@ Author
 ==========
 
 Scott Raymond <sco@scottraymond.net>
+
+
+==========
+Thanks
+==========
+
+Thanks to PackRat (http://apps.facebook.com/packrat/), from which this code was extracted.

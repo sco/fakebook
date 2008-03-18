@@ -73,14 +73,14 @@ end.parse!
 
 if File.exists?(config_file)
   config = YAML.load_file(config_file) || {}
+  fakebook_options[:callback_url] = config['callback'] if config['callback']
+  fakebook_options[:canvas_path]  = config['canvas'] if config['canvas']
+  fakebook_options[:app_secret]   = config['secret'] if config['secret']
+  fakebook_options[:fb_params][:user] = config['user'] if config['user']
+  fakebook_options[:fb_params][:session_key] = config['session'] if config['session']
+  fakebook_options[:fb_params][:friends] = config['friends'] if config['friends']
   rack_options[:Host] = config['host'] if config['host']
   rack_options[:Port] = config['port'] if config['port']
-  fakebook_options[:callback_url] = config['callback_url'] if config['callback_url']
-  fakebook_options[:canvas_path]  = config['canvas_path'] if config['canvas_path']
-  fakebook_options[:app_secret]   = config['app_secret'] if config['app_secret']
-  fakebook_options[:fb_params][:user] = config['user'] if config['user']
-  fakebook_options[:fb_params][:session_key] = config['session_key'] if config['session_key']
-  fakebook_options[:fb_params][:friends] = config['friends'] if config['friends']
 end
 
 fakebook = Fakebook.new(fakebook_options)

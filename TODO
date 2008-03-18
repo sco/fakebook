@@ -9,3 +9,5 @@
    - possessive names
    - share_button
 - respond to regular API requests?
+- generate config files?
+- allow for per-user or per-environment configs?
