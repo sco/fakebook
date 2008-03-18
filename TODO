@@ -1,3 +1,4 @@
+- it'd probably be more future-compatible to take the canvas path without slashes, so we can use it as an app name
 - document how to use different templates
 - can "use Rack::Static" be inside Fakebook?
 - parse fbml better

@@ -1,21 +1,21 @@
 Fakebook
 =============
 
-Simple Facebook platform simulator, to aid in developing Facebook canvas apps offline. Takes 
-a request and passes it to the app as a POST with the fb_sig_* params added, etc. Returns the 
-response with FBML parsed (sort of) and some chrome added.
+Facebook platform simulator, to aid in developing Facebook canvas apps offline. Takes a request 
+and passes it to the app as a POST with the fb_sig_* params added, etc. Returns the response 
+with FBML parsed (sort of) and some chrome added.
 
 To use, run 'fakebook' from the command line to start up a Fakebook proxy. For example, if you 
-have a Rails app running on port 3000, and the callback path is "/facebook/", and the canvas path 
-is "myapp":
+have an app running on port 3000, and the callback path is "/facebook/", and the canvas path 
+is "myapp", you'd run:
 
-  $ fakebook --callback "http://0.0.0.0:3000/facebook/" --canvas "/myapp/"
+  $ fakebook --callback "http://localhost:3000/facebook/" --canvas "/myapp/"
 
-You can save yourself some typing by creating a file called "config/fakebook.yml", and putting
-your configuration in it, like this:
+Fakebook will also look for a config file at "./config/fakebook.yml", so you can put that in 
+your project and save some typing. The file should look like this:
 
-  callback: "http://whatever/"
-  canvas:   "/myapp/"
+  callback: "http://localhost:3000/callback-path/"
+  canvas:   "/canvas-path/"
   secret:   345345jk4jkhfpo2390s
   user:     123435567
   session:  345345jk4jkhfpo2390s
@@ -28,17 +28,16 @@ See "fakebook --help" for more options.
 You can also use the library apart from the command line helper with the Facebook class:
 
   require 'fakebook'
-	app = Fakebook.new :callback_url => "http://0.0.0.0:3000/callback-path/",
+	app = Fakebook.new :callback_url => "http://localhost:3000/callback-path/",
 	                   :canvas_path  => "/myapp/",
 	                   :app_secret   => "app-secret",
 	                   :fb_params    => { :user => 123, :session_key => 'abc', :friends => "345,456" }
 	app.request("/")
 
 
-Because Fakebook implements #call according to the Rack specification 
-(http://rack.rubyforge.org/doc/files/SPEC.html), you can simply create an HTTP server that 
-proxies to your application, using your choice of server library (Mongrel, WEBrick, Thin, 
-etc.) For example:
+Because Fakebook implements #call according to the Rack specification [1], you can create an 
+HTTP server that proxies to your application using your choice of server library (Mongrel, 
+WEBrick, Thin, etc.) For example:
 
   Rack::Handler::Mongrel.run app, :Port => 5000
 
@@ -63,6 +62,7 @@ Run the helper executable to see the available options:
 Dependencies
 ===========
 
+Ruby
 Rack >= 0.3.0
 
 
@@ -72,9 +72,12 @@ Author
 
 Scott Raymond <sco@scottraymond.net>
 
-
-==========
-Thanks
-==========
-
 Thanks to PackRat (http://apps.facebook.com/packrat/), from which this code was extracted.
+
+
+==========
+See also
+==========
+
+[1] Rack specification: http://rack.rubyforge.org/doc/files/SPEC.html
+
