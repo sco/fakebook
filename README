@@ -11,7 +11,7 @@ is "myapp", you'd run:
 
   $ fakebook --callback "http://localhost:3000/facebook/" --canvas "/myapp/"
 
-Fakebook will also look for a config file at "./config/fakebook.yml", so you can put that in 
+Fakebook will also look for a config file at "./config/fakebook.yml", so you can put one in 
 your project and save some typing. The file should look like this:
 
   callback: "http://localhost:3000/callback-path/"
@@ -25,13 +25,13 @@ your project and save some typing. The file should look like this:
 
 See "fakebook --help" for more options.
 
-You can also use the library apart from the command line helper with the Facebook class:
+You can also use the library directly with the Fakebook class:
 
   require 'fakebook'
-	app = Fakebook.new :callback_url => "http://localhost:3000/callback-path/",
-	                   :canvas_path  => "/myapp/",
-	                   :app_secret   => "app-secret",
-	                   :fb_params    => { :user => 123, :session_key => 'abc', :friends => "345,456" }
+	app = Fakebook.new :callback  => "http://localhost:3000/callback-path/",
+	                   :canvas    => "/myapp/",
+	                   :secret    => "app-secret",
+	                   :fb_params => { :user => 123, :session_key => 'abc', :friends => "345,456" }
 	app.request("/")
 
 
@@ -53,7 +53,7 @@ To install the development version from the repository:
   $ cd sco-fakebook-master
   $ sudo rake install_gem
 
-Run the helper executable to see the available options:
+Run the executable to see the available options:
 
   $ fakebook --help
 
