@@ -36,14 +36,18 @@ class Fakebook
     req = Rack::Request.new(env)
     res = Rack::Response.new
 
-    response_body = request(env['PATH_INFO'], req.params)
-
-    if response_body =~ /fb:redirect url=\"(.*)\"/
-      res.status = 302
-      res["Location"] = $1
+    if env['PATH_INFO']=='/fakebook-rest-server'
+      res["Content-Type"] = "text/json; charset=utf-8"
+      res.write %Q({ "success":"true" }) # TODO: make this work
     else
-      res["Content-Type"] = "text/html; charset=utf-8"
-      res.write response_body
+      response_body = request(env['PATH_INFO'], req.params)
+      if response_body =~ /fb:redirect url=\"(.*)\"/
+        res.status = 302
+        res["Location"] = $1
+      else
+        res["Content-Type"] = "text/html; charset=utf-8"
+        res.write response_body
+      end
     end
     res.finish
   end
