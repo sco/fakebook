@@ -1,7 +1,5 @@
-- it'd probably be more future-compatible to take the canvas path without slashes, so we can use it as an app name
-- document how to use different templates
-- provide config/commandline option for specifying template
-- can "use Rack::Static" be inside Fakebook?
+- take the canvas path without slashes, so we can use it as an app name
+- document how to use different templates; provide config/commandline option for specifying template
 - parse fbml better
    - if-is-user
    - is-logged-out
@@ -10,6 +8,5 @@
    - comments
    - possessive names
    - share_button
-- respond to regular API requests?
-- generate config files?
+- better handling of API requests
 - allow for per-user or per-environment configs?

@@ -74,11 +74,11 @@ end.parse!
 if File.exists?(config_file)
   config = YAML.load_file(config_file) || {}
   fakebook_options[:callback] = config['callback'] if config['callback']
-  fakebook_options[:canvas]  = config['canvas'] if config['canvas']
-  fakebook_options[:secret]   = config['secret'] if config['secret']
-  fakebook_options[:fb_params][:user] = config['user'] if config['user']
+  fakebook_options[:canvas]   = config['canvas']   if config['canvas']
+  fakebook_options[:secret]   = config['secret']   if config['secret']
+  fakebook_options[:fb_params][:user]        = config['user']    if config['user']
   fakebook_options[:fb_params][:session_key] = config['session'] if config['session']
-  fakebook_options[:fb_params][:friends] = config['friends'] if config['friends']
+  fakebook_options[:fb_params][:friends]     = config['friends'] if config['friends']
   rack_options[:Host] = config['host'] if config['host']
   rack_options[:Port] = config['port'] if config['port']
 end
@@ -87,13 +87,11 @@ fakebook = Fakebook.new(fakebook_options)
 app = Rack::Builder.new {
   use Rack::CommonLogger, STDERR
   use Rack::ShowExceptions
-  use Rack::Static, :urls => ["/fakebook-assets"], :root => File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib")
   use Rack::Lint
   run fakebook
 }
 
-proxy_url = "http://#{rack_options[:Host]}:#{rack_options[:Port]}#{fakebook_options[:canvas]}"
-STDERR.puts "Starting Fakebook proxy from #{proxy_url} to #{fakebook_options[:callback]}"
+STDERR.puts "Starting Fakebook proxy from http://#{rack_options[:Host]}:#{rack_options[:Port]}#{fakebook.canvas} to #{fakebook.callback}"
 STDERR.puts "  Using fb_params: #{fakebook.fb_params.inspect}"
 
 server.run app, rack_options

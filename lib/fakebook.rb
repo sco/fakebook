@@ -18,16 +18,13 @@ class Fakebook
   
   attr_accessor :callback, :canvas, :secret, :fb_params, :template
 
-  #def self.new(*args)
-  #  Rack::Static.new(super, :urls => ["/fakebook-assets"], :root => File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib"))
-  #end
-
   def initialize(options = {})
     @callback  =  options[:callback]
     @canvas    =  options[:canvas]
     @secret    =  options[:secret]
     @fb_params = (options[:fb_params] || {}).merge(:in_canvas => 1, :expires => 0, :added => 1)
     @template  =  options[:template] || File.join(File.dirname(__FILE__), "templates", "standard.html.erb")
+    @static    =  Rack::File.new File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib")
   end
 
   # Implements the Rack interface. Takes a hash representing the environment; returns an 
@@ -35,12 +32,17 @@ class Fakebook
   def call(env)
     req = Rack::Request.new(env)
     res = Rack::Response.new
+    path = env['PATH_INFO']
 
-    if env['PATH_INFO']=='/fakebook-rest-server'
+    if File.file?(File.join(@static.root, Rack::Utils.unescape(path)))
+      @static.call(env)
+    elsif path=='/fakebook-rest-server'
       res["Content-Type"] = "text/json; charset=utf-8"
-      res.write %Q({ "success":"true" }) # TODO: make this work
+      res.write %Q({ "success":"true" })
+    elsif path=='/fakebook-install'
+      res.write %Q(This is the install URL.)
     else
-      response_body = request(env['PATH_INFO'], req.params)
+      response_body = request(path, req.params)
       if response_body =~ /fb:redirect url=\"(.*)\"/
         res.status = 302
         res["Location"] = $1

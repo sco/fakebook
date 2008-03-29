@@ -11,8 +11,8 @@ is "myapp", you'd run:
 
   $ fakebook --callback "http://localhost:3000/facebook/" --canvas "/myapp/"
 
-Fakebook will also look for a config file at "./config/fakebook.yml", so you can put one in 
-your project and save some typing. The file should look like this:
+Fakebook will look for a config file at "./config/fakebook.yml", so you can put one in your 
+project and save some typing. The file should look like this:
 
   callback: "http://localhost:3000/callback-path/"
   canvas:   "/canvas-path/"
@@ -34,11 +34,12 @@ You can also use the library directly with the Fakebook class:
 	                   :fb_params => { :user => 123, :session_key => 'abc', :friends => "345,456" }
 	app.request("/")
 
-
-Because Fakebook implements #call according to the Rack specification [1], you can create an 
+Because Fakebook implements #call according to the Rack specification[1], you can create an 
 HTTP server that proxies to your application using your choice of server library (Mongrel, 
 WEBrick, Thin, etc.) For example:
 
+	require 'fakebook'
+	app = Fakebook.new #...
   Rack::Handler::Mongrel.run app, :Port => 5000
 
 
