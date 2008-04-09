@@ -10,7 +10,7 @@ rescue LoadError => e
   server = Rack::Handler::WEBrick
 end
 rack_options = { :Port => 5000, :Host => "0.0.0.0" }
-fakebook_options = { :callback => "http://0.0.0.0:3000/facebook/", :canvas => "/myapp/", :secret => "app-secret", :fb_params => { :user => 123, :session_key => 'session-key', :friends => "2,3,4" } }
+fakebook_options = { :callback => "http://0.0.0.0:3000/", :canvas => "myapp", :secret => "secret", :fb_params => { :user => 1, :session_key => 'session_key', :friends => [2, 3, 4] } }
 config_file = "config/fakebook.yml"
 
 OptionParser.new do |opts|
@@ -91,7 +91,7 @@ app = Rack::Builder.new {
   run fakebook
 }
 
-STDERR.puts "Starting Fakebook proxy from http://#{rack_options[:Host]}:#{rack_options[:Port]}#{fakebook.canvas} to #{fakebook.callback}"
+STDERR.puts "Starting Fakebook proxy from http://#{rack_options[:Host]}:#{rack_options[:Port]}/#{fakebook.canvas}/ to #{fakebook.callback}"
 STDERR.puts "  Using fb_params: #{fakebook.fb_params.inspect}"
 
 server.run app, rack_options
