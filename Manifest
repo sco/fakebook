@@ -6,6 +6,7 @@ lib/fakebook-assets/extended.js
 lib/fakebook-assets/fakebook.js
 lib/fakebook-assets/fbml.js
 lib/fakebook-assets/navigator_bg.gif
+lib/fakebook-assets/shadow_gray.gif
 lib/fakebook-assets/string.js
 lib/fakebook.rb
 lib/templates/minimal.html.erb
