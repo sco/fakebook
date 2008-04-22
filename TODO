@@ -1,6 +1,5 @@
-- take the canvas path without slashes, so we can use it as an app name
 - document how to use different templates; provide config/commandline option for specifying template
-- parse fbml better
+- parse_fbml needs to become a full-blown parser
    - if-is-user
    - is-logged-out
    - iframe
@@ -8,5 +7,8 @@
    - comments
    - possessive names
    - share_button
+   - fb:header, create button, action link, help link, etc.
+   - fb:tabs
+   - fb:request_form
 - better handling of API requests
 - allow for per-user or per-environment configs?

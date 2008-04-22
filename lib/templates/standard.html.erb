@@ -20,7 +20,13 @@
 		<div id="book">
 			<div id="sidebar">
 				<a href="http://www.facebook.com" class="go_home"></a>
-				<div id="sidebar_content" style="height:150px"></div>
+				<div id="sidebar_content" style="min-height:150px">
+					<form action="/fakebook-update" method="post" style="margin: 5px">
+						<p><label>User</label><br/><input type="text" name="user" value="<%= @fb_params[:user] %>" size="15" /></p>
+						<p><label>Friends</label><br/><textarea name="friends" rows="3" cols="15"><%= @fb_params[:friends].join(',') %></textarea></p>
+						<p><input type="submit" value="Update" /></p>
+					</form>
+				</div>
 			</div>
 			<div id="widebar" class="clearfix">
 				<div id="navigator"></div>

@@ -1,15 +1,15 @@
 Fakebook
 =============
 
-Facebook platform simulator, to aid in developing Facebook canvas apps offline. Takes a request 
-and passes it to the app as a POST with the fb_sig_* params added, etc. Returns the response 
-with FBML parsed (sort of) and some chrome added.
+Fakebook simulates the Facebook platform, to aid in developing Facebook canvas apps offline. 
+It takes a request and passes it to the app as a POST with the fb_sig_* params added, etc. 
+The response is returned with FBML parsed (sort of) and some chrome added.
 
 To use, run 'fakebook' from the command line to start up a Fakebook proxy. For example, if you 
 have an app running on port 3000, and the callback path is "/", and the canvas path 
 is "myapp", you'd run:
 
-  $ fakebook --callback "http://localhost:3000/" --canvas "myapp"
+  $ fakebook --callback="http://localhost:3000/" --canvas="myapp"
 
 See "fakebook --help" for more options. By default, Fakebook will look for a config file at 
 "./config/fakebook.yml". The file should look like this:
@@ -23,7 +23,7 @@ See "fakebook --help" for more options. By default, Fakebook will look for a con
   host:     0.0.0.0
   port:     5000
 
-You can also use the library directly with the Fakebook class:
+You can also use the library directly with the Fakebook class, which eases testing:
 
   require 'fakebook'
 	app = Fakebook.new :callback  => "http://localhost:3000/",

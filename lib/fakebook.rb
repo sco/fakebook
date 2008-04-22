@@ -4,6 +4,8 @@ require 'digest/md5'
 require 'erb'
 require 'rubygems'
 require 'rack'
+require File.dirname(__FILE__) + '/tokenizer'
+require File.dirname(__FILE__) + '/node'
 
 class Fakebook
   
@@ -27,7 +29,7 @@ class Fakebook
     @static    =  Rack::File.new(File.expand_path(File.dirname(__FILE__)))
   end
 
-  # Implements the Rack interface. Takes a hash representing the environment; returns an 
+  # Implements the Rack interface. Takes a hash representing the request environment; returns an 
   # array of [status, headers, body].
   def call(env)
     req = Rack::Request.new(env)
@@ -36,9 +38,15 @@ class Fakebook
 
     if File.exists?(File.join(@static.root, Rack::Utils.unescape(path)))
       return @static.call(env)
+    elsif path=='/favicon.ico'
+      res.status = 404
     elsif path=='/fakebook-rest-server'
       res["Content-Type"] = "text/json; charset=utf-8"
       res.write %Q({ "success":"true" })
+    elsif path=='/fakebook-update'
+      @fb_params[:user] = req.params['user'] if req.params['user']
+      res.status = 302
+      res["Location"] = req.env['HTTP_REFERER']
     elsif path=='/fakebook-install'
       res.write %Q(This is the install URL.)
     else
@@ -54,7 +62,7 @@ class Fakebook
     res.finish
   end
   
-  # Takes a path and optional params; returns the response body.
+  # Takes a path and optional params; returns the parsed and re-written response body.
   def request(path, params={})
     url = URI.parse(@callback + path.gsub(Regexp.new('^/' + @canvas + '/'), ''))
     path_and_query_string = "#{url.path}?#{url.query}"
@@ -82,9 +90,47 @@ class Fakebook
     end
 
     def parse_fbml(body)
-      body.gsub! /<fb:name .*?>/, '[name]'
-      body.gsub! /<fb:title>(.*)<\/fb:title>/, ''
-      title = $1
+      allowed_tags = %w(fb:redirect style script form input textarea strong em b i p code pre tt samp kbd var sub sup dfn cite big small address hr br div span h1 h2 h3 h4 h5 h6 ul ol li dt dd abbr acronym a img blockquote del ins)
+      parent = []
+      result = []
+      hide = false # TODO: in order to account for more complicated nesting of conditions, this should be an array
+      tokenizer = HTML::Tokenizer.new(body)
+      while token = tokenizer.next
+        node = HTML::Node.parse(nil, 0, 0, token, false)
+        temp = nil
+        if node.is_a? HTML::Tag
+          if node.name=='fb:name'
+            temp = "[USER #{node.attributes['uid']}]"
+          elsif node.name=='fb:profile-pic'
+            temp = "[PIC #{node.attributes['uid']}]"
+          elsif node.name=='fb:title'
+            title = tokenizer.next
+          elsif node.name=='fb:if-is-user'
+            hide = (node.closing==:close) ? false : (node.attributes['uid']!=@fb_params[:user].to_s) # TODO: allow for multiple uids to be specified
+          elsif node.name=='fb:else'
+            hide = !hide
+          elsif node.name=='fb:dashboard'
+            temp = (node.closing==:close) ? %Q(</div>) : %Q(<div style="padding: 8px;">)
+          elsif node.name=='fb:create-button'
+            temp = %Q(<a href="#{node.attributes['href']}" class="create-button" style="float: right">#{tokenizer.next}</a>)
+            tokenizer.next
+          elsif node.name=='fb:action'
+            temp = %Q(<a href="#{node.attributes['href']}" class="dashboard-action">#{tokenizer.next}</a> | )
+            tokenizer.next
+          else
+            temp = node if allowed_tags.include?(node.name)
+          end
+        else
+          temp = node.to_s
+        end
+        result << temp unless temp.nil? || hide
+      end
+      body = result.join
+
+      #title = 'foo'
+      
+      #body.gsub! /<fb:title>(.*)<\/fb:title>/, ''
+      #title = $1
       erb.result(binding)
     end
     
