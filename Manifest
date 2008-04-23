@@ -8,9 +8,12 @@ lib/fakebook-assets/fbml.js
 lib/fakebook-assets/navigator_bg.gif
 lib/fakebook-assets/shadow_gray.gif
 lib/fakebook-assets/string.js
+lib/fakebook-assets/white.gif
 lib/fakebook.rb
+lib/node.rb
 lib/templates/minimal.html.erb
 lib/templates/standard.html.erb
+lib/tokenizer.rb
 LICENSE
 Manifest
 README
