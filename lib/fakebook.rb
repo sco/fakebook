@@ -129,12 +129,8 @@ class Fakebook
         end
         result << temp unless temp.nil? || hide
       end
-      body = result.join
 
-      #title = 'foo'
-      
-      #body.gsub! /<fb:title>(.*)<\/fb:title>/, ''
-      #title = $1
+      body = result.join
       erb.result(binding)
     end
     

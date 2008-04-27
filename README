@@ -4,13 +4,15 @@ Fakebook simulates the Facebook platform, to aid in developing Facebook canvas a
 It takes a request and passes it to the app as a POST with the fb_sig_* params added, etc. 
 The response is returned with FBML parsed (sort of) and some chrome added.
 
+In other words: you can work on Facebook canvas apps when you're on a plane.
+
 To use, run 'fakebook' from the command line to start up a Fakebook proxy. For example, if you 
 have an app running on port 3000, and the callback path is "/", and the canvas path 
 is "myapp", you would run:
 
   $ fakebook --callback="http://localhost:3000/" --canvas="myapp"
 
-See +fakebook --help+ for more options. By default, Fakebook will look for a config file at 
+See "fakebook --help" for more options. By default, Fakebook will look for a config file at 
 ./config/fakebook.yml. The file should look like this:
 
   callback: http://localhost:3000/
