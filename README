@@ -1,5 +1,4 @@
-Fakebook
-=============
+= Fakebook
 
 Fakebook simulates the Facebook platform, to aid in developing Facebook canvas apps offline. 
 It takes a request and passes it to the app as a POST with the fb_sig_* params added, etc. 
@@ -7,12 +6,12 @@ The response is returned with FBML parsed (sort of) and some chrome added.
 
 To use, run 'fakebook' from the command line to start up a Fakebook proxy. For example, if you 
 have an app running on port 3000, and the callback path is "/", and the canvas path 
-is "myapp", you'd run:
+is "myapp", you would run:
 
   $ fakebook --callback="http://localhost:3000/" --canvas="myapp"
 
-See "fakebook --help" for more options. By default, Fakebook will look for a config file at 
-"./config/fakebook.yml". The file should look like this:
+See +fakebook --help+ for more options. By default, Fakebook will look for a config file at 
+./config/fakebook.yml. The file should look like this:
 
   callback: http://localhost:3000/
   canvas:   myapp
@@ -26,24 +25,23 @@ See "fakebook --help" for more options. By default, Fakebook will look for a con
 You can also use the library directly with the Fakebook class, which eases testing:
 
   require 'fakebook'
-	app = Fakebook.new :callback  => "http://localhost:3000/",
-	                   :canvas    => "myapp",
-	                   :secret    => "secret",
-	                   :fb_params => { :user => 1, :session_key => 'session_key', :friends => [2, 3, 4] }
-	app.request("/")
+  app = Fakebook.new :callback  => "http://localhost:3000/",
+                     :canvas    => "myapp",
+                     :secret    => "secret",
+                     :fb_params => { :user => 1, :session_key => 'session_key', :friends => [2, 3, 4] }
+  app.request("/")
 
-Because Fakebook implements #call according to the Rack specification[1], you can create an 
-HTTP server that proxies to your application using your choice of server library (Mongrel, 
-WEBrick, Thin, etc.) For example:
+Because Fakebook implements #call according to the Rack 
+specification[http://rack.rubyforge.org/doc/files/SPEC.html], you can create an HTTP server 
+that proxies to your application using your choice of server library (Mongrel, WEBrick, Thin, 
+etc.) For example:
 
-	require 'fakebook'
-	app = Fakebook.new #...
+  require 'fakebook'
+  app = Fakebook.new # etc...
   Rack::Handler::Mongrel.run app, :Port => 5000
 
 
-===========
-Getting started
-===========
+== Getting started
 
 To install via RubyGems:
 
@@ -62,26 +60,14 @@ To install the development version from the repository:
   $ sudo rake install_gem
 
 
-===========
-Dependencies
-===========
+== Dependencies
 
 Ruby
 Rack >= 0.3.0
 
 
-==========
-Author
-==========
+== Author
 
 Scott Raymond <sco@scottraymond.net>
 
-Thanks to PackRat (http://apps.facebook.com/packrat/), from which this code was extracted.
-
-
-==========
-See also
-==========
-
-[1] Rack specification: http://rack.rubyforge.org/doc/files/SPEC.html
-
+Thanks to PackRat[http://apps.facebook.com/packrat/], from which this code was extracted.
