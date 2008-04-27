@@ -13,3 +13,4 @@
 - better handling of API requests
 - allow for per-user or per-environment configs?
 - implement ajax, including the local proxy
+- figure out what the license and attribution is for the HTML parsing stuff

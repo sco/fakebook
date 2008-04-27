@@ -45,16 +45,21 @@ WEBrick, Thin, etc.) For example:
 Getting started
 ===========
 
+To install via RubyGems:
+
+  $ gem sources -a http://gems.github.com/
+  $ sudo gem install sco-fakebook
+
+Run the executable to see the available options:
+
+  $ fakebook --help
+
 To install the development version from the repository:
 
   $ wget http://github.com/sco/fakebook/tarball/master
   $ tar -xvf sco-fakebook-master.tar.gz
   $ cd sco-fakebook-master
   $ sudo rake install_gem
-
-Run the executable to see the available options:
-
-  $ fakebook --help
 
 
 ===========
