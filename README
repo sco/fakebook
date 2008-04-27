@@ -45,8 +45,7 @@ etc.) For example:
 
 To install via RubyGems:
 
-  $ gem sources -a http://gems.github.com/
-  $ sudo gem install sco-fakebook
+  $ sudo gem install sco-fakebook --source http://gems.github.com/
 
 Run the executable to see the available options:
 

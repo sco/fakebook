@@ -6,6 +6,10 @@ Gem::Specification.new do |s|
   s.homepage         = "http://github.com/sco/fakebook"
   s.author           = "Scott Raymond"
   s.email            = "sco@scottraymond.net"
+  s.add_dependency   "rack", ">=0.3.0"
+  s.has_rdoc         = true
+  s.rdoc_options     = ["--main", "README"]
+  s.extra_rdoc_files = ["Manifest", "TODO", "README", "LICENSE"]
   s.executables      = ['fakebook']
   s.files            = ["bin/fakebook",
                         "fakebook.gemspec",
@@ -30,8 +34,4 @@ Gem::Specification.new do |s|
                         "README",
                         "TODO",
                        ]
-  s.has_rdoc         = true
-  s.rdoc_options     = ["--main", "README"]
-  s.extra_rdoc_files = ["Manifest", "TODO", "README", "LICENSE"]
-  s.add_dependency   "rack", ">=0.3.0"
 end
