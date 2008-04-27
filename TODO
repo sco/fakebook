@@ -12,3 +12,4 @@
    - fb:request_form
 - better handling of API requests
 - allow for per-user or per-environment configs?
+- implement ajax, including the local proxy

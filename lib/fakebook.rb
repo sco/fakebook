@@ -44,11 +44,15 @@ class Fakebook
       res["Content-Type"] = "text/json; charset=utf-8"
       res.write %Q({ "success":"true" })
     elsif path=='/fakebook-update'
-      @fb_params[:user] = req.params['user'] if req.params['user']
+      @fb_params[:user] = req.params['user'].to_i if req.params['user']
+      @fb_params[:friends] = req.params['friends'].split(/, ?/).map{ |id| id.to_i } if req.params['friends']
+      @fb_params[:in_canvas] = req.params['in_canvas'].to_i if req.params['in_canvas']
+      @fb_params[:added] = req.params['added'].to_i if req.params['added']
       res.status = 302
       res["Location"] = req.env['HTTP_REFERER']
     elsif path=='/fakebook-install'
-      res.write %Q(This is the install URL.)
+      res.write %Q(This is the install URL. <a href="?added=1">Set fb_sig_added to 1.</a>)
+      @fb_params[:added] = 1 if req.params['added']=='1'
     else
       response_body = request(path, req.params)
       if response_body =~ /fb:redirect url=\"(.*)\"/
