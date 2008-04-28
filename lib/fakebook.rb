@@ -94,7 +94,7 @@ class Fakebook
     end
 
     def parse_fbml(body)
-      allowed_tags = %w(fb:redirect style script form input textarea strong em b i p code pre tt samp kbd var sub sup dfn cite big small address hr br div span h1 h2 h3 h4 h5 h6 ul ol li dt dd abbr acronym a img blockquote del ins)
+      allowed_tags = %w(fb:redirect link style script form input textarea strong em b i p code pre tt samp kbd var sub sup dfn cite big small address hr br div span h1 h2 h3 h4 h5 h6 ul ol li dt dd abbr acronym a img blockquote del ins)
       parent = []
       result = []
       hide = false # TODO: in order to account for more complicated nesting of conditions, this should be an array
