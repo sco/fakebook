@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name             = "fakebook"
-  s.version          = "0.1.0" # also see fakebook.rb
-  s.date             = "2008-04-26"
+  s.version          = "0.1.1" # also see fakebook.rb
+  s.date             = "2008-07-09"
   s.summary          = "Simple Facebook platform simulator, to aid in developing Facebook canvas apps offline."
   s.homepage         = "http://github.com/sco/fakebook"
   s.author           = "Scott Raymond"

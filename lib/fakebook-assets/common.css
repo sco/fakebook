@@ -155,7 +155,6 @@ td.label{font-size:11px;text-align:left;}
 #navigator.shortened .secondary_set li{margin:0 8px 0 0;}
 #navigator.shortened .main_set li a.edit_link{font-size:11px;}
 #book #content_shadow{margin:2px 0px 0px 1px;background:transparent url(/fakebook-assets/shadow_gray.gif) repeat-y top right;padding:0px;border-bottom:solid 1px #ddd;}
-#content{margin:-2px 1px 0px -1px;border-top:none;border-left:solid 1px #b7b7b7;border-right:solid 1px #b7b7b7;border-bottom:solid 1px #3b5998;font-size:11px;}
 #ad_1{clear:both;}
 #pagefooter{clear:both;padding:0px;margin:0px;height:50px;line-height:16px;}
 #pagefooter ul{display:block;list-style:none;float:right;margin:0px;padding:8px 2px 4px;}

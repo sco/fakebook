@@ -1,4 +1,6 @@
-- document how to use different templates; provide config/commandline option for specifying template
+- convert readme to markdown; see http://github.com/pjhyett/github-services/tree/master
+- document how to use different templates; provide config/command-line option for specifying template
+- shell out to facebook's fbml/fbjs parser? (requires php)
 - parse_fbml needs to become a full-blown parser
    - if-is-user
    - is-logged-out
@@ -10,6 +12,7 @@
    - fb:header, create button, action link, help link, etc.
    - fb:tabs
    - fb:request_form
+   - fb:intl and fb:intlvar
 - better handling of API requests
 - allow for per-user or per-environment configs?
 - implement ajax, including the local proxy
