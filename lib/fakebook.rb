@@ -9,7 +9,7 @@ require File.dirname(__FILE__) + '/node'
 
 class Fakebook
   
-  Version = '0.1.1' # also see fakebook.gemspec
+  Version = '0.1.2' # also see fakebook.gemspec
   
   attr_accessor :callback, :canvas, :secret, :fb_params, :template
 

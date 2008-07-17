@@ -1,6 +1,7 @@
 require 'rake'
-require './lib/fakebook'
+#require './lib/fakebook'
 
+desc "install gem"
 task :install_gem do
-  puts `gem build fakebook.gemspec && gem install fakebook-#{Fakebook::Version}.gem && rm fakebook-#{Fakebook::Version}.gem`
+  puts `gem build fakebook.gemspec && sudo gem install fakebook*.gem && rm fakebook*.gem`
 end
