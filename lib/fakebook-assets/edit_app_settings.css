@@ -1,0 +1,31 @@
+/*       Source:  Global Cache                                                                */
+/*     Location:  css/edit_app_settings.css r109434                                           */
+/*      Machine:  10.16.140.104                                                               */
+/*    Generated:  July 16th 2008 1:55:15 PM PDT                                               */
+/*    HTTP Host:  static.ak.fbcdn.net                                                         */
+
+
+.app_settings_tab{text-align:center;background:white;}
+.edit_app_dialog_summary{overflow:hidden;padding-bottom:0px;margin-bottom:-9px;margin-top:-6px;}
+.edit_app_dialog_summary .tab_link{margin:3px 10px 0px 0px;padding:5px 8px;float:left;}
+.edit_app_dialog_summary .tab_link_selected{color:#333;padding:4px 7px 5px;background:white;border:solid 1px #ccc;border-bottom:solid 1px white;margin-bottom:-1px;}
+.app_settings_tab{padding:10px 10px;}
+.feed_settings_tab{padding-top:5px;}
+.app_settings_tab .editor{margin-top:0px;}
+.app_settings_tab .bookmark_right{margin:0px 50px 0px 0px;}
+.app_feed_major_button{text-align:left;color:#000;font-size:11px;padding:5px 0px 3px;}
+.app_feed_minor_button{text-align:left;padding:2px 2px 2px 20px;font-size:10px;color:#666;}
+.app_feed_major_button label{color:#000;}
+.the_fine_print{text-align:left;font-size:9px;color:#666;display:block;padding:2px 2px 2px 20px;}
+#edit_app_settings_save_fill{padding:0px 0px 0px 10px;text-align:center;}
+.app_settings_tab .extended_info_checkbox{padding:7px 0px 5px 15px;display:block;}
+.app_settings_tab .extended_info_checkbox label{font-size:10px;font-weight:normal;color:#000;}
+#app_settings_extended_tab{text-align:left;font-size:11px;font-weight:bold;color:#666;padding:0px 0px 0px 5px;}
+.app_settings_tab .row_label .label{padding:5px 0px 0px 0px;vertical-align:top;}
+.app_settings_tab .profile_tab_item{padding:0px 5px 5px 10px;width:300px;height:15px;}
+.app_settings_tab .profile_tab_privacy_item{padding:0px 5px 5px 10px;}
+.app_settings_tab .float_left{float:left;}
+.app_settings_tab .remove_app_permission_link{width:80px;float:right;text-align:left;padding:0px 0px 0px 15px;background-repeat:no-repeat;background-image:url('/images/icon_remove.gif');}
+.app_settings_tab .add_app_permission_link{width:80px;float:right;text-align:left;padding:0px 0px 0px 17px;background-repeat:no-repeat;}
+.app_settings_app_icon{padding:0px 10px 0px 3px;vertical-align:bottom;}
+.empty_setting{padding:10px;}

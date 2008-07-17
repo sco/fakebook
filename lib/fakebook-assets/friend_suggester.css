@@ -1,0 +1,12 @@
+/*       Source:  Local Cache                                                                 */
+/*     Location:  rsrc:104972:/html/css/friend_suggester.css                                  */
+/*      Machine:  10.16.140.101                                                               */
+/*    Generated:  July 9th 2008 3:45:06 PM PDT                                                */
+/*    HTTP Host:  static.ak.fbcdn.net                                                         */
+
+
+.friend_suggester_dialog .loading{text-align:center;padding:30px;}
+.friend_suggester_dialog #pop_dialog_table{width:509px;}
+.friend_suggester_dialog #fb_multi_friend_selector h2{background:none;border:none;}
+.friend_suggester_dialog #fb_multi_friend_selector.num_cols_3{width:469px;}
+.friend_suggester_dialog #fb_multi_friend_selector #view_unselected{display:none;}

@@ -1,0 +1,8 @@
+/*       Source:  Local Cache                                                                 */
+/*     Location:  rsrc:82746:/html/css/tour_tip.css                                           */
+/*      Machine:  10.16.139.102                                                               */
+/*    Generated:  July 9th 2008 3:45:07 PM PDT                                                */
+/*    HTTP Host:  static.ak.fbcdn.net                                                         */
+
+#edit_profile_tour, #search_tour{position:absolute;color:white;line-height:14px;z-index:100;padding:0px 10px;font-weight:bold;}
+#edit_profile_tour{top:8px;margin-left:-183px;width:142px;height:86px;padding-top:36px;background:url(/images/edit_profile_tour.png) no-repeat !important;background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/edit_profile_tour.png', sizingMethod='crop');}

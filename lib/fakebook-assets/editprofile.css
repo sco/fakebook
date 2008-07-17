@@ -1,0 +1,42 @@
+/*       Source:  Global Cache                                                                */
+/*     Location:  css/editprofile.css r105208                                                 */
+/*      Machine:  10.16.140.108                                                               */
+/*    Generated:  July 9th 2008 3:48:44 PM PDT                                                */
+/*    HTTP Host:  static.ak.fbcdn.net                                                         */
+
+.profile_note{background:#fff;padding:10px;margin:0 10px 8px 10px;border:1px solid #bdc7d8;color:#444;}
+.editprofile #content{padding:12px 0px 0px;}
+.editprofile .editor{padding-right:70px;width:510px;}
+.editprofile .editor .label{text-align:right;padding-right:15px;width:150px;}
+.editprofile .editor .buttons{text-align:left;padding-left:160px;}
+.editprofile #residence_name{width:200px;}
+.editprofile .room input{width:80px;}
+.editprofile .hometown_zip input{width:80px;}
+.editprofile .hometown input{width:200px;}
+.editprofile .hometown_country select{width:120px;}
+.editprofile .zip input{width:80px;}
+.editprofile .political select{width:200px;}
+.editprofile #religion .inputtext{width:200px;}
+.editprofile .interests textarea,
+.editprofile .music textarea,
+.editprofile .tv textarea,
+.editprofile .movies textarea,
+.editprofile .books textarea{height:px }
+.editprofile .quotes textarea,
+.editprofile .aboutme textarea{height:92px }
+.editprofile .work_position .inputtext,
+.editprofile .work_position textarea{width:280px;}
+.editprofile .work_position textarea{height:66px;}
+#infoarea{margin:0px 10px;}
+#uploadpicture h4{border-bottom:solid 1px #D8DFEA;margin:0px;padding:0px 0px 2px;font-size:13px;}
+#currentpicture{margin:10px 10px 20px 20px;float:left;width:200px;}
+#currentpicture h4{margin:0px;padding:1px 0px 4px;font-size:11px;border-bottom:none;}
+#nopicture{width:200px;font-size:12px;padding:75px 0px;text-align:center;background:#f7f7f7;border:solid 1px #ddd;color:gray;}
+#uploadpicture{margin:10px 20px 20px 10px;float:left;width:366px;}
+#uploadpicture small{display:block;margin:5px 0px;color:gray;}
+#uploadpicture .inputcheckbox{float:left;display:block;margin:2px 5px 8px 0px;}
+#election2006 .header{margin:5px 0px 10px 0px;color:#333333;font-size:11px;}
+#election2006 .emptybox{font-size:12px;text-align:center;margin:10px 0px;padding:40px 10px;color:gray;background:white;border:solid 1px #ddd;}
+#election2006 .election_set{margin-bottom:20px;}
+.aim_text .inputtext{width:160px;margin-right:8px;}
+#hidden_sn_1, #hidden_sn_2, #hidden_sn_3, #hidden_sn_4{display:none;}

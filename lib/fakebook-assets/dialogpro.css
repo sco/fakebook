@@ -1,0 +1,58 @@
+/*       Source:  Local Cache                                                                 */
+/*     Location:  rsrc:104778:/html/css/dialogpro.css                                         */
+/*      Machine:  10.16.139.107                                                               */
+/*    Generated:  July 9th 2008 3:45:10 PM PDT                                                */
+/*    HTTP Host:  static.ak.fbcdn.net                                                         */
+
+
+.generic_dialog{height:0px;left:0px;overflow:visible;position:absolute;top:0px;width:100%;z-index:100;}
+#generic_dialog_iframe{filter:alpha(opacity=0);left:0px;position:absolute;top:0px;z-index:3;}
+.generic_dialog .generic_dialog_popup{height:0px;overflow:visible;position:relative;}
+.generic_dialog div.dialog_loading{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:10px;}
+#generic_dialog_overlay{z-index:99;display:block;position:absolute;top:0px;left:0px;width:100%;}
+.dark_dialog_overlay{background-image:url(/images/overlay.png);background-repeat:repeat;}
+* html .dark_dialog_overlay{background-color:transparent;back\ground-color:transparent;background-image:url(/images/blank.gif);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/images/overlay.png", sizingMethod="scale");}
+table.pop_dialog_table{border-collapse:collapse;margin:auto;table-layout:fixed;width:465px;}
+td.pop_topleft, td.pop_topright, td.pop_bottomleft, td.pop_bottomright{height:10px;overflow:hidden;padding:0px!important;padding:5px;width:10px!important;width:0px;}
+td.pop_topleft{background-image:url('/imgs/pop_dialog_top_left.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_top_left.png', sizingMethod='crop');}
+td.pop_topright{background-image:url('/imgs/pop_dialog_top_right.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_top_right.png', sizingMethod='crop');}
+td.pop_bottomleft{background-image:url('/imgs/pop_dialog_bottom_left.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_bottom_left.png', sizingMethod='crop');}
+td.pop_bottomright{background-image:url('/imgs/pop_dialog_bottom_right.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_bottom_right.png', sizingMethod='scale');}
+td.pop_border{background-image:url('/imgs/pop_dialog_border.png')!important;background-image:none;filter:none!important;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/imgs/pop_dialog_border.png', sizingMethod='scale');}
+.noshadow table td.pop_topleft,
+.noshadow table td.pop_topright,
+.noshadow table td.pop_bottomleft,
+.noshadow table td.pop_bottomright,
+.noshadow table td.pop_border{background-image:none !important;filter:none !important;}
+td.pop_content{background-color:white;padding:0px;}
+td.pop_content h2{background:#6d84b4;border:1px solid #3b5998;color:white;font-size:14px;font-weight:bold;margin:0px;}
+td.pop_content h2.dialog_loading{background:#6d84b4 url(/images/upload_progress.gif) no-repeat 400px 10px;padding-right:40px;}
+td.pop_content h2 span{display:block;padding:4px 10px 5px 10px;}
+td.pop_content .dialog_content{background:#fff;border:1px solid #555;border-top-width:0px;}
+td.pop_content .dialog_body{padding:10px;border-bottom:1px solid #ccc;}
+td.pop_content .dialog_summary{background:#f2f2f2;padding:8px 10px 8px 10px;border-bottom:1px solid #ccc;}
+td.pop_content .dialog_buttons{background:#f2f2f2;padding:8px;text-align:right;}
+td.pop_content .dialog_buttons input{margin-left:5px;}
+.dialog_content .dialog_buttons .inputaux,
+.dialog_content .dialog_buttons .inputaux_disabled,
+.dialog_content .dialog_buttons .inputbutton,
+.dialog_content .dialog_buttons .inputsubmit{zpadding-left:14px;zpadding-right:14px;}
+td.pop_content .dialog_buttons_msg{float:left;}
+td.pop_content .dialog_footer{background:#F2F2F2 none repeat scroll 0%;}
+.contextual_dialog .generic_dialog_popup{width:360px;}
+.contextual_dialog .contextual_arrow,
+.contextual_dialog .contextual_arrow_rev{background-image:url('/images/minifeed_dialog_triangle.gif');background-repeat:no-repeat;height:12px;position:relative;top:1px;}
+.contextual_dialog .contextual_arrow_rev{background-image:url('/images/minifeed_dialog_triangle_rev.gif');}
+.contextual_dialog .contextual_arrow span,
+.contextual_dialog .contextual_arrow_rev span{display:none;}
+.contextual_dialog h2{color:black;font-size:11px;padding-bottom:2px;}
+.contextual_dialog .contextual_dialog_content{background-color:#f0f0f0;border:1px solid #b7b7b7;border-bottom:2px solid #3b5998;line-height:15px;padding:8px 10px 10px 10px;}
+.contextual_dialog .dialog_buttons{padding-top:10px;}
+.contextual_dialog .dialog_buttons input{margin-right:10px;}
+.contextual_dialog .dialog_buttons_msg{float:right;}
+.errorDialog td.pop_content h2{background:#ffebe8;border:none;border-bottom:1px solid #AAAAAA;color:#333333;}
+.errorDialog td.pop_content{border:1px solid #ee7c90;}
+.errorDialog td.pop_content .dialog_content{border:none;}
+.errorDialog td.pop_content .dialog_content .dialog_body{padding:15px;}
+.camera td.pop_content .dialog_body{padding:0px 0px 0px 0px;margin-bottom:0px;}
+.camera td.pop_content .dialog_buttons{margin-top:-2px;border-top:1px solid #555555;}

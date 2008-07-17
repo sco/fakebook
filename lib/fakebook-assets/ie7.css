@@ -1,0 +1,406 @@
+
+/*  ------------------------------------------------------------------------
+                    Facebook | IE7/PC Hacks | getfirefox.com
+    ------------------------------------------------------------------------  */
+
+.inputbutton,
+.inputsubmit {
+  width: 1;
+  overflow: visible;
+  padding: 2px 15px;
+}
+
+.clearfix, #userprofile {
+  overflow : hidden ! important;
+  _height : 1% ! important;
+}
+
+#nav a {
+  width:115px;
+  display:block;
+
+}
+
+/* Menu image alignment hacks */
+
+#navigator .main_set li .with_arrow {
+  margin-top: 1px;
+}
+
+#navigator .main_set li a.global_menu_arrow,
+#navigator .main_set li a.global_menu_arrow_active {
+  height: 19px;
+  width: 17px;
+  margin: 0px 0px -10px -1px;
+  padding: 3px 0px 3px;
+  background: transparent url(/images/global_menu_arrow.gif) no-repeat 0px center; }
+
+  #navigator .main_set li a.global_menu_arrow_active,
+  #navigator .main_set li a.global_menu_arrow:hover,
+  #navigator .main_set li a.global_menu_arrow_active:hover {
+    background: #5c75aa url(/images/global_menu_arrow.gif) no-repeat 0px center; }
+
+#profilenarrowcolumn {
+  margin-right: 9px!important;
+}
+
+.box_head {
+  padding-bottom: 0px;
+}
+
+.box_head h2 {
+  padding-bottom: 0px;
+}
+
+#pagefooter li {
+  white-space: nowrap;
+}
+
+
+/*  ------------------------|  DISPLAY COMPONENTS  |------------------------  */
+
+.tabs {
+  padding:0;
+}
+
+.toggle_tabs li a {
+  display:inline-block;
+}
+
+.toggle_tabs {
+  margin-bottom:-1px;
+}
+
+.toggle_tabs li {
+  background-position:0 3px;
+}
+
+.profile .account_info {
+  margin: 0px -21px 2px -229px;
+  padding: 17px 21px 8px 237px;
+}
+
+#profileActions a:hover .unselected .text {
+  padding-top: 2px;
+}
+
+.app_icon_row {
+  position: static;
+}
+
+/*  ---------------------------|  EDIT ACCOUNT  |---------------------------  */
+
+.editaccount .settings_panel .email_option { padding-bottom: 0px; }
+
+.editaccount #email .buttons { margin-top: 0px; margin-left: 0px; padding-left: 22px; }
+
+
+/* ----------------------------|  UBERSEARCH |----------------------------  */
+
+.dropdown-container {
+  direction: ltr; /* IE7 hack to force redraw */
+
+  margin-left: 2px;
+  margin-top: 1px;
+  z-index: 1000 !important;
+}
+
+.ubersearch .filters fieldset legend {
+  margin: -5px -10px 0px -7px;
+  padding-bottom: 4px;
+  width: 133px }
+
+.filters #label_c2, .filters #label_c1 {
+  display:block;
+}
+
+/*  ------------------------------|  MEGABOX  |-----------------------------  */
+
+.composer_fields label {
+  padding-top:7px;
+}
+
+#compose_message .inputsubmit {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.inbox #megaboxx .subject_wrap .subject_text {
+  display:inline-block;
+}
+
+/* ----------------------------| NOTIFICATIONS |----------------------------  */
+
+.notifications .submission small {
+  line-height:12px;
+}
+
+.notification_checkboxes {
+  margin-top:-8px;
+}
+
+.notifications label {
+  display:inline-block;
+}
+
+.confirminvite .inputsubmit,
+.confirminvite .inputbutton {
+  padding: 1px 3px;
+}
+
+/*  ---------------------------|  EVENTS INVITE TOOL  |----------------------------  */
+
+.invite .left #summaryandpager h4 {
+  height: 16px;
+}
+
+/* ------------------------------| FEEDBACK |--------------------------------  */
+
+.explanation .square_bullets {
+  margin-left:0;
+}
+
+.feedback .mixer_panel .saved_notification {
+  display:inline-block;
+}
+
+.feedback .mixer_panel .left_buttons, .feedback .mixer_panel .right_buttons {
+  margin-top:1px;
+}
+
+.feedback .mixer_panel .mixer_bar {
+  margin-top:5px;
+  margin-bottom:1px;
+}
+
+.vslider {
+  padding-bottom: 19px;
+}
+
+/* --------------------------------| SHARE |---------------------------------  */
+
+#shareitems .share_and_hide {
+  width:60px;
+}
+
+#shareitems .x_to_hide {
+  float:right;
+}
+
+.share_pop_dialog .status h2 {
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+/*  -----------------------------|  MOTION  |------------------------------  */
+
+.video_permalink #add_comment {
+  padding-top: 15px;
+}
+
+.video_upload_page .separators {
+  position: relative;
+  margin-bottom: -1.1em;
+}
+
+.video_upload_page .separators a {
+  display: inline-block;
+}
+
+
+/*  -----------------------------|  ADD POLL  |------------------------------  */
+
+.editor.showrows .hiddenrow {
+  display: block;
+}
+
+/*  --------------------------|  APP DIRECTORY  |---------------------------  */
+
+.products .side_column {
+  float:right;
+  width:156px;
+}
+
+.products .app_browser li a,
+.products .app_browser li.app_type a {
+  margin-left:1px;
+}
+
+.products .app_browser li.selected a {
+  margin-left:0;
+  border-left:1px solid #fff;
+}
+
+/*  -----------------------------| THE WALL  |------------------------------  */
+#content .thewall {
+  margin-bottom: 15px;
+}
+
+/*  --------------------------|  MEGWALL  |---------------------------  */
+
+#inline_wall_post dd {
+  margin-left:4px;
+}
+
+.attachment_compact .wall_video_thumb .play {
+  margin-top:-22px;
+  padding-bottom:3px;
+}
+
+/*  --------------------------|  MULTI FRIEND SELECTOR  |---------------------------  */
+
+#fb_multi_friend_selector .navigator_menu ul {
+  height:220px;
+  width:140px;
+}
+
+#fb_multi_friend_selector #friends .square {
+  position:static;
+}
+
+#fb_multi_friend_selector #friends .square span {
+  position:static;
+}
+
+#fb_multi_friend_selector #fs_filter_links a {
+  display:block;
+  float:left;
+}
+
+#fb_multi_friend_selector .navigator_menu {
+  top:32px;
+}
+
+#fb_multi_friend_selector .cols_squeeze .navigator_menu {
+  top:30px;
+}
+
+#fb_multi_friend_selector #fs_limit_by_list_menu {
+  right:96px;
+}
+
+.num_cols_2 #fb_multi_friend_selector_wrapper .buttons {
+  clear:both;
+}
+
+.num_cols_2 #fb_multi_friend_selector_wrapper #finder .hide {
+  left:320px;
+  top:44px;
+}
+
+.num_cols_3 #fb_multi_friend_selector_wrapper #finder .hide {
+  left:351px;
+  top:44px;
+}
+
+/*  --------------------------|  EDIT EVENT CALENDAR PICKER  |---------------------------  */
+
+.editor #start_calendar, .editor #end_calendar {
+  margin-top: 18px;
+  margin-left: -35px;
+}
+
+.calendar .month_title span {
+  margin-left: -80px;
+}
+
+#fb_multi_friend_selector #skip_top {
+  margin-top:12px;
+  margin-right:0px;
+}
+
+.req_confirmation #req_msg_add {
+  padding-top:6px;
+}
+
+/*  -------------------------| MISC FBML |------------------------------ */
+
+input.request_form_submit {
+  background: #3B5998 url(/images/icons/request_button_icon.gif) no-repeat 8px 5px;
+  padding: 3px 6px 3px 30px;
+  overflow: visible; /* http://jehiah.cz/archive/button-width-in-ie */
+}
+
+/*  -------------------------|  UNIVERSAL SEARCH |--------------------------  */
+
+#sidebar_content #qsearch #qsearch_submit {
+  padding: 0px 0px 2px 0px;
+}
+
+#sidebar_content #qsearch.hourglass #qsearch_field #qsearch_wrapper {
+  background: white;
+  border-right: 0px;
+  padding: 0px;
+}
+
+
+/*  --------------------------|  PANDEMIC AD CREATION FORM |---------------------------  */
+.targeting_table td {
+  padding: 2px 1px;
+}
+
+/*  --------------------------|  FEED |---------------------------  */
+
+.minifeed .photobox {
+  padding-bottom: 1px; /* fix bottom border on photo mini-feed stories */
+}
+
+.social_ad .social_ad_sponsored_question a {
+   background: transparent url(/images/question_mark_informational_off.gif) no-repeat scroll right top;
+}
+
+/*  --------------------------|  WELCOME |---------------------------  */
+.bottom_link div.find_friends_left {
+  padding-top: 5px !important;
+}
+
+/*  --------------------------|  PRIVACYPRO WIDGET |---------------------------  */
+
+/* Yeah, so IE is ridiculous and puts padding/margin around radios and you can't get rid of it */
+.privacy_widget .advanced .body .friends .advanced_friends_radio_item .radio_left {
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-left: 3px;
+  margin-top: -2px;
+}
+
+.privacy_widget .privacy_profile_advanced .checks label {
+  padding-left: 2px;
+}
+
+/*  --------------------------|  CHAT  |---------------------------  */
+
+#presence #chat_tab_bar .chat_window_wrapper {
+  margin-left:-219px;
+}
+
+.presence_popout #presence #chat_tab_bar .chat_window_wrapper {
+  margin-left:0px;
+}
+
+#presence #presence_bar_buttons .titletip strong {
+  margin:0;
+}
+
+#presence #presence_bar #chat_status_control_tab img {
+  margin-top:6px;
+}
+
+#buddy_list .compact ul li {
+  margin-top:-2px;
+}
+
+#buddy_list ul li.subheader {
+  margin-top:-6px;
+}
+
+.presence_popout #presence #chat_tab_bar .chat_window .chat_conv p {
+  margin-left:52px;
+  padding-left:0px;
+}
+
+#presence .emote_text,
+#presence .emote_img {
+  margin-bottom:-3px;
+}
+

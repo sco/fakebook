@@ -1,0 +1,715 @@
+
+/*  ------------------------------------------------------------------------
+                    Facebook | IE 6 Hacks | getfirefox.com
+                http://www.facebook.com/group.php?gid=7985157289
+    ------------------------------------------------------------------------  */
+
+.inputbutton,
+.inputsubmit {
+  width: 1;
+  overflow: visible;
+  padding: 2px 15px;
+}
+
+#tabs { margin-top: 22px }
+
+#announce p { word-wrap: break-word }
+
+#suggest div { cursor: hand }
+
+
+.timeline h2 span {
+  text-align: left;
+  padding-bottom: 1px;
+  padding-left: 0.7em; }
+
+.timeline .quietyear p { padding-bottom: 6px }
+
+.timeline .scrapbook div {
+  padding-top: 12px; }
+
+
+/*  UNIVERSAL SEARCH  */
+
+/*  Readjusts Universal Search submit button  */
+#sidebar_content #qsearch #qsearch_submit {
+  padding: 0px 0px 2px 0px;
+}
+
+/*  Readjusts Search submit button on Welcome page  */
+.welcome .new_search_form_wrapper #qsearch_submit {
+  padding: 1px 0px 2px 0px;
+}
+
+/*  Removes the mag glass graphic and right border from Universal Search field  */
+#sidebar_content #qsearch.hourglass #qsearch_field #qsearch_wrapper {
+  background: white;
+  border-right: 0px;
+  padding: 0px;
+  width: 102px;
+}
+
+
+
+/* Menu image alignment hacks */
+
+#navigator .main_set li .with_arrow {
+ margin-top: 3px;
+}
+
+#navigator .main_set li a.global_menu_arrow,
+#navigator .main_set li a.global_menu_arrow_active {
+  height: 19px;
+  width: 17px;
+  margin: 0px 0px -10px -1px;
+  padding: 6px 0px 3px;
+  overflow: hidden;
+  background: transparent url(/images/global_menu_arrow.gif) no-repeat 0px center; }
+
+
+  #navigator .main_set li a.global_menu_arrow_active,
+  #navigator .main_set li a.global_menu_arrow:hover,
+  #navigator .main_set li a.global_menu_arrow_active:hover {
+    background: #5c75aa url(/images/global_menu_arrow.gif) no-repeat 0px center; }
+
+
+#quailquote {
+  padding-bottom:3px;}
+
+#group.profile .related {
+  word-wrap:break-word; }
+
+#pagefooter li {
+  white-space: nowrap;
+}
+
+
+/*  ------------------------|  i18n Mode  |------------------------  */
+
+#xtrmode,
+#xtrmode_off {
+  margin-top:10px;
+}
+
+/*  ------------------------|  DISPLAY COMPONENTS  |------------------------  */
+
+.profile .account_info {
+  position: relative;
+  width: 388px;
+  margin-left: -231px;
+}
+
+.obj_media_header .media_gray_bg,
+.media_header .media_gray_bg {
+  position: relative;
+}
+
+.tabs {
+  padding:0;
+}
+
+.toggle_tabs {
+  margin-bottom:-1px;
+}
+
+.toggle_tabs li {
+  background-position:0 3px;
+}
+
+.toggle_tabs li a {
+  display:inline-block;
+}
+
+
+
+/*  ---------------------------|  HIGHLIGHTING  |---------------------------  */
+
+.highlight, .inserted {
+ line-height: 17px; }
+
+/*  ------------------------------|  MEGABOX  |-----------------------------  */
+
+.composer_fields label {
+  padding-top:7px;
+}
+
+#compose_message .inputsubmit {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.message .share_media.photo .photo_thumb img,
+.message .share_media.share_ext_photo .share_thumb img {
+  width: 360px;
+}
+
+.inbox #megaboxx .subject_wrap .subject_text {
+  display:inline-block;
+}
+
+/*  ----------------------------|  UBERSEARCH  |----------------------------  */
+
+.dropdown-container {
+  margin-left: 1px; }
+
+#goodFrame {
+  position: absolute;
+  z-index: 0;
+  border: 0px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0); }
+
+.ubersearch .uber_bar #label_q {}
+
+.ubersearch .uber_bar #n_dropdown { margin-top: 2px; }
+
+.filters legend { cursor: hand }
+
+.ubersearch .filters fieldset legend {
+  margin: -5px -10px 0px -7px;
+  padding-bottom: 4px;
+  width: 133px }
+
+.filters #label_c2, .filters #label_c1 {
+  display:block;
+}
+
+.ubersearch .filters .checkbox { padding-bottom: 0px; }
+.ubersearch .filters .checkbox input { margin: 0px; }
+.ubersearch .filters .checkbox label { margin: 0px; }
+
+.ubersearch #filters_sx label { padding: 0px }
+.ubersearch #filters_sx .filter_controls { padding-bottom: 2px }
+
+
+/*  -------------------------|  CLASSMATE SEARCH  |-------------------------  */
+
+.classmate_query .inputtext { width: 231px }
+
+.classmate_query select { margin-top: 1px }
+
+/*  -----------------------------|  COMPOSE  |------------------------------  */
+
+.mailbox .dropdown-container { margin-top: 1px; margin-left: 2px; }
+#message_image { margin-left: 4px;}
+
+/* ----------------------------|  DISCUSSIONS  |----------------------------  */
+
+.profile .discussions .board_topic { width: 368px }
+
+/* ----------------------------|  PERSONAL INFO |---------------------------  */
+
+.profile .profileTable .data .datawrap { overflow: hidden }
+
+/*  ----------------------------|  MY GROUPS  |-----------------------------  */
+
+.grouplist .infotable .datawrap { display: block; width: 300px }
+#groupslist .info { width: 420px }
+
+/*  ----------------------------|  GUESTLIST  |-----------------------------  */
+
+.confirmed .people_table td { width: 56px }
+.confirmed .people_table table td.name div { width: 54px }
+
+.guestlist .people_table td { width: 60px }
+.guestlist .people_table table td.name div { width: 58px }
+
+/*  ---------------------------|  EDIT ACCOUNT  |---------------------------  */
+
+.editaccount .action_box .buttons input { width: 140px }
+
+.editaccount .settings_panel .email_option { padding-bottom: 0px; }
+
+.editaccount #email .buttons { margin-top: 0px; margin-left: 0px; padding-left: 20px; }
+
+
+/*  ---------------------------|  EDIT PROFILE  |---------------------------  */
+
+.subrow td table td {
+  border-left: 2px solid;
+  border-top: 3px solid; }
+
+.editor_panel .subrow td table td {
+  border-left: 2px solid #f7f7f7;
+  border-top: 3px solid #f7f7f7; }
+
+.subrow td table td input { margin-top:1px }
+
+.school select { margin-bottom:1px }
+
+.highschool select { margin-top:2px }
+
+.editor_panel #uploadpicture { width: 325px }
+
+.editprofile .noneditable_value { width: 170px }
+
+.editprofile .editor_actions { float: left; padding-left: 5px; }
+
+.editorHelp, .editorHelp div {
+  width: 190px;
+}
+/*  ------------------------------|  NOTES  |-------------------------------  */
+
+.set {
+  padding-left:1px;
+}
+
+#create_note {
+  padding-left:0;
+  margin-left:1px;
+}
+
+.editnote .side_column {
+  margin:0 0 0 8px;
+}
+
+.delete_note #content {
+  padding-right:105px ! important;
+}
+
+#blog_url_field .inputtext {
+  width:285px;
+}
+
+.side_column #tag_this_note .inputtext {
+  margin: 0px;
+  width: 141px; }
+
+.editnote .main_column {
+  width: 408px; }
+
+.editnote #upload_iframe {
+  height: 48px; }
+
+
+
+/*  ---------------------------|  HOMESLICE  |----------------------------  */
+
+.home #home_container #home_main {
+  display:inline;
+}
+
+.sidebar_item_header .option {
+  margin-top:5px;
+}
+
+#home_feedintro {
+  width:435px;
+  padding-bottom:13px;
+}
+
+#home_feedintro h4 {
+  display:inline;
+  padding-right:100px;
+}
+
+#orientation .orientation_im_done {
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+.confirminvite .inputsubmit,
+.confirminvite .inputbutton {
+  padding: 1px 3px;
+}
+
+.social_ad .social_ad_sponsored_question a {
+   background: transparent url(/images/question_mark_informational_off.gif) no-repeat scroll right top;
+}
+
+/*  ---------------------------|  EVENTS INVITE TOOL  |----------------------------  */
+
+.invite .left #summaryandpager h4 {
+  height: 16px;
+}
+
+/*  ---------------------------|  MINIFEED  |----------------------------  */
+
+.minifeed {
+  padding-top:0;
+}
+
+.minifeed .photobox {
+  padding-bottom:1px;
+}
+
+/*  ------------------------------|  SHARE  |-------------------------------  */
+
+.ext_sharer #main_column {
+  border-right: 1px solid #ccc;
+  width: 439px;
+}
+
+.my_sharebox .share_header .share_and_hide {
+  width: 7.0em; }
+
+
+.share_media .external .video_thumb a img.decoy {
+  display: none;
+}
+
+.share_media .external .video_thumb a span.thumb {
+  position: relative;
+}
+
+.share_media .external .video_thumb a span.thumb img {
+  visibility: hidden;
+}
+
+.share_media .external .video_thumb a span.play {
+  background-image: url(/images/video_play_overlay.gif);
+  display: none;
+  position: relative;
+}
+
+.share_pop_dialog .status h2 {
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+/* ----------------------------| NOTIFICATIONS |----------------------------  */
+
+.notifications .submission small {
+  line-height:12px;
+}
+
+.notification_checkboxes {
+  margin-top:-8px;
+}
+
+.notifications label {
+  display:inline-block;
+}
+/* --------------------------------| HELP |---------------------------------  */
+
+.help_column img {
+  margin-top: 0px;
+}
+
+.help_column .highlight img {
+  margin-top: 0px;
+}
+
+/* ------------------------------| FEEDBACK |--------------------------------  */
+
+.explanation .square_bullets {
+  margin-left:0;
+}
+
+.feedback .mixer_panel .saved_notification {
+  display:inline-block;
+}
+
+.feedback .mixer_panel .left_buttons, .feedback .mixer_panel .right_buttons {
+  margin-top:1px;
+}
+
+.feedback .mixer_panel .mixer_bar {
+  margin-top:5px;
+  margin-bottom:1px;
+}
+
+.vslider {
+  padding-bottom: 19px;
+}
+
+.transparent_png {
+    display: none;
+}
+
+.transparent_png_ie6 {
+    display: block;
+}
+
+.listing #header {
+    padding-bottom: 10px;
+}
+
+/*  -----------------------------|  MOTION  |------------------------------  */
+
+.video_dashboard #video_banner {
+  border-left: 0px;
+  border-right: 0px;
+  margin: 0px;
+}
+
+.video_upload_page .separators {
+  position: relative;
+  margin-bottom: -1.1em;
+}
+
+.video_upload_page .separators a {
+  display: inline-block;
+}
+
+/*  -----------------------------|  ADD POLL  |------------------------------  */
+
+.editor.showrows .hiddenrow {
+  display: block;
+}
+
+
+/*  -----------------------------|  APP_SWITCHER  |------------------------------  */
+
+/* No idea why in ie the link jumps 3px over when positioned absolutely... will look into this later*/
+#sidebar .app_list .floating_container .link_title {
+   margin-left: 3px;
+}
+
+/*  --------------------------|  APP DIRECTORY  |---------------------------  */
+
+.products .side_column {
+  float:right;
+  width:156px;
+}
+
+.products .app_browser li a,
+.products .app_browser li.app_type a {
+  margin-left:1px;
+}
+
+.products .app_browser li.selected a {
+  margin-left:0;
+  border-left:1px solid #fff;
+}
+
+.products .app_browser li a {
+  height:1px;
+}
+
+/*  --------------------------|  MEGWALL  |---------------------------  */
+#inline_wall_post dd {
+  margin-left:4px;
+}
+
+.attachment_compact .wall_video_thumb .play .wrap {
+  padding-bottom:2px;
+}
+
+.wallpost .attached_item_info {
+  height:19px;
+}
+
+.wall_attachment .share_media .share_thumb img {
+  width: 100px;
+}
+
+.wall_attachment .share_media.photo .fb_photo .photo_thumb img,
+.wall_attachment .share_media.share_ext_photo .share_thumb img {
+  width: 316px;
+}
+
+.attachment_stage {
+  height:50px;
+}
+
+/*  --------------------------|  MULTI FRIEND SELECTOR  |---------------------------  */
+
+#fb_multi_friend_selector #friends .square {
+  position:static;
+}
+
+#fb_multi_friend_selector #friends .square span {
+  position:static;
+}
+
+#fb_multi_friend_selector #fs_filter_links a {
+  display:block;
+  float:left;
+}
+
+#fb_multi_friend_selector .navigator_menu {
+  position:absolute;
+  top:32px;
+  margin-right:-10px;
+}
+
+#fb_multi_friend_selector .cols_squeeze .navigator_menu {
+  top:30px;
+}
+
+#fb_multi_friend_selector #fs_limit_by_list_menu {
+  margin-right:4px;
+}
+
+#fb_multi_friend_selector .navigator_menu ul {
+  height:220px;
+  width:140px;
+}
+
+#fb_multi_friend_selector .cols_squeeze #fs_filter_links {
+  position:static;
+}
+
+.num_cols_2 #fb_multi_friend_selector_wrapper .buttons {
+  clear:both;
+}
+
+.num_cols_2 #fb_multi_friend_selector_wrapper #finder .hide {
+  left:320px;
+  top:44px;
+}
+
+.num_cols_3 #fb_multi_friend_selector_wrapper #finder .hide {
+  top:44px;
+}
+
+/*  --------------------------|  EDIT EVENT CALENDAR PICKER  |---------------------------  */
+
+.editor #start_calendar, .editor #end_calendar {
+  margin-top: 18px;
+  margin-left: -35px;
+}
+
+.calendar .month_title span {
+  margin-left: -80px;
+}
+
+#fb_multi_friend_selector #fs_limit_by_network_menu {
+  right:22px;
+}
+
+.num_cols_2 #fb_multi_friend_selector_wrapper .buttons {
+  clear:both;
+}
+
+/* -------------------------------|  SEND EMAIL - MFS REQUESTS  |------------------------------ */
+
+.req_confirmation #req_msg_add {
+  padding-top:6px;
+}
+
+.req_confirmation .req_recipients .token span {
+  display:inline;
+}
+
+.req_confirmation .req_preview {
+  height:150px;
+}
+
+/*  -------------------------| MISC FBML |------------------------------ */
+
+input.request_form_submit {
+  background: #3B5998 url(/images/icons/request_button_icon.gif) no-repeat 8px 5px;
+  padding: 3px 6px 3px 30px;
+}
+
+/*  --------------------------|  PANDEMIC AD CREATION FORM |---------------------------  */
+.targeting_table td {
+  padding: 2px 1px;
+}
+
+.targeting_table label {
+  vertical-align: 38%;
+}
+
+/*  --------------------------|  FRIENDS PAGE |---------------------------  */
+.ftabs #ftabs a.active {
+  margin-left: 0px;
+  left: -1px;
+}
+
+/*  ---------------------------|  MINIFEED  |----------------------------  */
+.find_friends_left {
+  padding-top: 10px;
+}
+
+/*  --------------------------|  WELCOME |---------------------------  */
+.bottom_link div.find_friends_left {
+  padding-top: 5px !important;
+}
+
+/* -------------------| DEV APP | ---------------------- */
+.dev_app_infos {
+  margin: 0 -1px -1px 0;
+}
+
+.dev_app_list li.selected .border_hack {
+  z-index: 100;
+  height: 100%;
+  padding: 6px 0;
+  background-color: #3b5998;
+  width: 1px;
+  display: block;
+  right: -1px;
+  top: 0;
+  position: absolute;
+  border: 0;
+  margin: 0;
+  text-indent: -9999px;
+
+}
+
+/*  --------------------------|  PRIVACYPRO WIDGET |---------------------------  */
+
+/* Yeah, so IE is ridiculous and puts padding/margin around radios and you can't get rid of it */
+.privacy_widget .advanced .body .friends .advanced_friends_radio_item .radio_left {
+  padding-left: 0px;
+  padding-top: 0px;
+  padding-left: 3px;
+  margin-top: -2px;
+}
+
+.privacy_widget .privacy_profile_advanced .checks label {
+  padding-left: 2px;
+}
+
+/*  --------------------------|  PROFILE.PHP |---------------------------  */
+/*  if a platform app has too many action links, ie6 behaves poorly, breaking the
+    profile layout. This enforces widths. */
+
+#profilenarrowcolumn .box_subhead {
+  margin-right: 1px;
+  overflow: hidden;
+  width: 184px;
+}
+
+/* and then reset it for fb_pages */
+.fbpage_profile #profilenarrowcolumn .box_subhead {
+  margin: auto;
+  overflow: visible;
+  width: auto;
+}
+
+
+/*  --------------------------|  CHAT  |---------------------------  */
+
+#presence_simple {
+  margin-top:10px;
+  padding-right:4px;
+}
+
+#presence #presence_preload {
+  position:absolute;
+}
+
+.presence_popout #presence #buddy_list ul {
+  padding-left:1px;
+}
+
+.presence_popout #presence #open_chats .highlight .popout_tab {
+  padding-top:2px;
+  padding-bottom:2px;
+}
+
+#buddy_list .compact ul li {
+  margin-top:-2px;
+}
+
+.presence_popout #buddy_list ul li.subheader {
+  margin-top:-8px;
+}
+
+.presence_popout #presence #chat_tab_bar .chat_shadow_input {
+  position:absolute;
+}
+
+.presence_popout #presence #chat_tab_bar .chat_window .chat_conv p {
+  margin-left:52px;
+  padding-left:0px;
+}
+
+#presence .emote_text,
+#presence .emote_img {
+  margin-bottom:-3px;
+}
+
