@@ -4,51 +4,81 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" id="facebook">
 
 	<head>
-		<title>Fakebook | Application | <%= title %></title>
+		<title>Facebook | PackRat Design</title>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="/fakebook-assets/common.css" type="text/css" media="all"/>
-		<link rel="stylesheet" href="/fakebook-assets/canvas.css" type="text/css"/>
-		<script type="text/javascript" src="/fakebook-assets/base.js"></script>
-		<script type="text/javascript" src="/fakebook-assets/fbml.js"></script>
-		<script type="text/javascript" src="/fakebook-assets/extended.js"></script>
-		<script type="text/javascript" src="/fakebook-assets/string.js"></script>
-		<script type="text/javascript" src="/fakebook-assets/fakebook.js"></script>
+
+		<script type="text/javascript" src="/fakebook-assets/firstscript.js"></script>
+		<script type="text/javascript" src="/fakebook-assets/js_strings.js"></script>
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/common.css" />
+		<%# app CSS goes here %>
+		<%# where does JS go? %>
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/dialogpro.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/editprofile.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/tour_tip.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/pages.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/canvas.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/ubersearch.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/typeaheadpro.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/friend_suggester.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/profile.css" />
+    <link type="text/css" rel="stylesheet" href="/fakebook-assets/edit_app_settings.css" />
+    <script type="text/javascript" src="/fakebook-assets/common.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/link_controller.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/flyout_menu.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/canvas.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/confirmation.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/feedform.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/quickling.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/attachments.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/fbml.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/friend_suggester.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/typeahead_source.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/drag.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/sort.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/edit_app_settings.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/editapps.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/scrollarea.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/search_typeaheadpro.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/static_source.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/search_friend_source.js"></script>
+    <script type="text/javascript" src="/fakebook-assets/livemessage.js"></script>
+		<!--[if lte IE 6]><style type="text/css" media="screen">/* <![CDATA[ */ @import url(/fakebook-assets/ie6.css); /* ]]> */</style><![endif]-->
+		<!--[if gte IE 7]><style type="text/css" media="screen">/* <![CDATA[ */ @import url(/fakebook-assets/ie7.css); /* ]]> */</style><![endif]-->
+		<link rel="stylesheet" href="/fakebook-assets/webkit.css" type="text/css"/>
 	</head>
 
-	<body class="fbframe">
-
-		<div id="book">
-			<div id="sidebar">
-				<a href="http://www.facebook.com" class="go_home"></a>
-				<div id="sidebar_content" style="height:150px"></div>
-			</div>
-			<div id="widebar" class="clearfix">
-				<div id="navigator"></div>
-				<div id="page_body" class="pagebody fbframe">
-					<div id="content_shadow">
-						<div id="content" class="clearfix">
-							<div id="app_content_<%= @app_id %>" class="app_content_<%= @app_id %> canvas_rel_positioning"></div>
-							<%= body %>
+	<body class="fbframe frame_wide widebook chat_body">
+		<div id="fb_nonfooter">
+			<div id="fb_nonfooter_content">
+				<div id="fb_dropmenu_container">
+					<div id="fb_menubar" class="clearfix">
+						<div id="fb_menubar_logo">
+							<a href="http://www.new.facebook.com/home.php?ref=logo" title="Go to Facebook Home"><span>&nbsp;</span></a>
 						</div>
 					</div>
 				</div>
-				<div id="pagefooter" class="clearfix"></div>
+				<div id="book">
+					<div class="compatibility_frame">
+						<div id="content">
+							<div id="app_content_<%= @app_id %>" class="app_content_<%= @app_id %> canvas_rel_positioning">
+								<div>
+									<%= body %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	
-		<!-- TODO: replace references to user ids, etc -->
-		<script type="text/javascript">
-		  /*
-      FBML.Contexts["8e8502184f40"] = "O:16:\"CanvasFBMLFlavor\":1:{s:9:\"_fbml_env\";a:9:{s:4:\"user\";i:505421674;s:6:\"app_id\";s:10:\"<%= @app_id %>\";s:10:\"fb_page_id\";i:0;s:14:\"unfiltered_css\";b:0;s:10:\"canvas_url\";s:33:\"http:\/\/apps.facebook.com\/packrat\/\";s:10:\"source_url\";s:30:\"http:\/\/67.202.39.181\/facebook\/\";s:9:\"loggedout\";b:0;s:7:\"non-tos\";b:0;s:11:\"flavor_code\";i:3;}}";
-      FBML._mockAjaxProxyUrl = "http:\/\/apps.facebook.com\/fbml\/mock_ajax_proxy.php"
-      var app=new fbjs_sandbox(<%= @app_id %>);
-      app.validation_vars={"fb_sig_time":"1203052554.0774","fb_sig_added":1,"fb_sig_user":505421674,"fb_sig_profile_update_time":1202944208,"fb_sig_session_key":"2d5edb7749d7c3926b358f75-505421674","fb_sig_expires":0,"fb_sig_api_key":"1b2c477e39be0e0b9efa17e49c93954f","fb_sig":"db2b41794182b523b89a38b97cd9e05f"};
-      app.context='4d1a7d42f1dd';
-      app.contextd='O:16:\x22CanvasFBMLFlavor\x22:1:{s:9:\x22_fbml_env\x22;a:10:{s:4:\x22user\x22;i:505421674;s:6:\x22app_id\x22;s:10:\x22<%= @app_id %>\x22;s:10:\x22fb_page_id\x22;i:0;s:14:\x22unfiltered_css\x22;b:0;s:10:\x22canvas_url\x22;s:33:\x22http://apps.facebook.com/packrat/\x22;s:10:\x22source_url\x22;s:30:\x22http://67.202.39.181/facebook/\x22;s:9:\x22loggedout\x22;b:0;s:7:\x22non-tos\x22;b:0;s:11:\x22flavor_code\x22;i:3;s:14:\x22user_triggered\x22;b:0;}}';
-      app.data={"user":505421674,"installed":true,"loggedin":true};
-      app.bootstrap();
-      */
-		</script>
-
+		<div id="pagefooter">
+			<div class="pagefooter_topborder clearfix">
+				<div class="f_links">
+					<ul class="footer_links" id="nav_unused_3"><li>&nbsp;</li></ul>
+				</div>
+			</div>
+		</div>
+		<div id="js_buffer">
+			<script type="text/javascript" src="endscript.js"></script>
+		</div>
 	</body>
 </html>

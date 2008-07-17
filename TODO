@@ -1,4 +1,6 @@
+- bring back the form that lets you change your fb_* params
 - convert readme to markdown; see http://github.com/pjhyett/github-services/tree/master
+  - or convert to rdoc; see http://github.com/fiveruns/data_fabric/tree/master
 - document how to use different templates; provide config/command-line option for specifying template
 - shell out to facebook's fbml/fbjs parser? (requires php)
 - parse_fbml needs to become a full-blown parser
