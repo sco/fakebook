@@ -44,10 +44,10 @@ class Fakebook
       res["Content-Type"] = "text/json; charset=utf-8"
       res.write %Q({ "success":"true" })
     elsif path=='/fakebook-update'
-      @fb_params[:user] = req.params['user'].to_i if req.params['user']
-      @fb_params[:friends] = req.params['friends'].split(/, ?/).map{ |id| id.to_i } if req.params['friends']
+      @fb_params[:user]      = req.params['user'].to_i if req.params['user']
+      @fb_params[:friends]   = req.params['friends'].split(/, ?/).map{ |id| id.to_i } if req.params['friends']
       @fb_params[:in_canvas] = req.params['in_canvas'].to_i if req.params['in_canvas']
-      @fb_params[:added] = req.params['added'].to_i if req.params['added']
+      @fb_params[:added]     = req.params['added'].to_i if req.params['added']
       res.status = 302
       res["Location"] = req.env['HTTP_REFERER']
     elsif path=='/fakebook-install'

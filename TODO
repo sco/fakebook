@@ -1,8 +1,7 @@
 - bring back the form that lets you change your fb_* params
-- convert readme to markdown; see http://github.com/pjhyett/github-services/tree/master
-  - or convert to rdoc; see http://github.com/fiveruns/data_fabric/tree/master
 - document how to use different templates; provide config/command-line option for specifying template
-- shell out to facebook's fbml/fbjs parser? (requires php)
+- shell out to facebook's fbml/fbjs parser? (lots of dependencies, including firefox)
+- eliminate assets that aren't really used
 - parse_fbml needs to become a full-blown parser
    - if-is-user
    - is-logged-out
@@ -19,3 +18,4 @@
 - allow for per-user or per-environment configs?
 - implement ajax, including the local proxy
 - figure out what the license and attribution is for the HTML parsing stuff
+- switch to hpricot for the parsing and re-writing? or libxml-ruby?

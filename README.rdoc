@@ -33,9 +33,10 @@ You can also use the library directly with the Fakebook class, which eases testi
                      :fb_params => { :user => 1, :session_key => 'session_key', :friends => [2, 3, 4] }
   app.request("/")
 
-Because Fakebook implements #call according to the Rack specification 
-(http://rack.rubyforge.org/doc/files/SPEC.html), you can create an HTTP server that proxies to 
-your application using your choice of server library (Mongrel, WEBrick, Thin, etc.) For example:
+Because Fakebook implements #call according to the Rack 
+specification[http://rack.rubyforge.org/doc/files/SPEC.html], you can create an HTTP server 
+that proxies to your application using your choice of server library (Mongrel, WEBrick, Thin, 
+etc.) For example:
 
   require 'fakebook'
   app = Fakebook.new # etc...
